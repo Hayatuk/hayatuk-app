@@ -1,34 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hayatuk/core/validators/validators.dart';
 import 'package:hayatuk/features/auth/presentation/auth_providers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
-
-const bloodTypes = [
-  'A_POS',
-  'A_NEG',
-  'B_POS',
-  'B_NEG',
-  'AB_POS',
-  'AB_NEG',
-  'O_POS',
-  'O_NEG',
-];
-
-String bloodTypeLabel(String value) {
-  return switch (value) {
-    'A_POS' => 'A+',
-    'A_NEG' => 'A-',
-    'B_POS' => 'B+',
-    'B_NEG' => 'B-',
-    'AB_POS' => 'AB+',
-    'AB_NEG' => 'AB-',
-    'O_POS' => 'O+',
-    'O_NEG' => 'O-',
-    _ => value,
-  };
-}
 
 class RegisterScreen extends ConsumerStatefulWidget {
   const RegisterScreen({super.key});

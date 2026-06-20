@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hayatuk/core/utils/date_format.dart';
 import 'package:hayatuk/features/donation/presentation/donation_providers.dart';
@@ -136,7 +137,7 @@ class _AcceptanceCard extends StatelessWidget {
               child: isDonated
                   ? const Icon(Icons.check, color: Colors.white)
                   : Text(
-                      _bloodTypeLabel(request.bloodType),
+                      bloodTypeLabel(request.bloodType),
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -156,7 +157,7 @@ class _AcceptanceCard extends StatelessWidget {
                         ),
                 ),
                 Text(
-                  _bloodTypeLabel(request.bloodType),
+                  bloodTypeLabel(request.bloodType),
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
@@ -213,20 +214,6 @@ class _AcceptanceCard extends StatelessWidget {
       'fulfilled' => Colors.green,
       'cancelled' => Colors.grey,
       _ => Theme.of(context).colorScheme.primary,
-    };
-  }
-
-  String _bloodTypeLabel(String value) {
-    return switch (value) {
-      'A_POS' => 'A+',
-      'A_NEG' => 'A-',
-      'B_POS' => 'B+',
-      'B_NEG' => 'B-',
-      'AB_POS' => 'AB+',
-      'AB_NEG' => 'AB-',
-      'O_POS' => 'O+',
-      'O_NEG' => 'O-',
-      _ => value,
     };
   }
 

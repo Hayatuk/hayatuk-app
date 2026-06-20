@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -11,31 +12,6 @@ import 'package:hayatuk/features/request/data/models/create_request_input.dart';
 import 'package:hayatuk/features/request/presentation/request_providers.dart';
 import 'package:hayatuk/features/user/presentation/user_providers.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
-
-const _bloodTypes = [
-  'A_POS',
-  'A_NEG',
-  'B_POS',
-  'B_NEG',
-  'AB_POS',
-  'AB_NEG',
-  'O_POS',
-  'O_NEG',
-];
-
-String _bloodTypeLabel(String value) {
-  return switch (value) {
-    'A_POS' => 'A+',
-    'A_NEG' => 'A-',
-    'B_POS' => 'B+',
-    'B_NEG' => 'B-',
-    'AB_POS' => 'AB+',
-    'AB_NEG' => 'AB-',
-    'O_POS' => 'O+',
-    'O_NEG' => 'O-',
-    _ => value,
-  };
-}
 
 const _productTypes = ['whole_blood', 'platelets'];
 String _productTypeLabel(AppLocalizations l10n, String value) {
@@ -182,11 +158,11 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                 DropdownButtonFormField<String>(
                   initialValue: _bloodType,
                   decoration: InputDecoration(labelText: l10n.bloodType),
-                  items: _bloodTypes
+                  items: bloodTypes
                       .map(
                         (t) => DropdownMenuItem(
                           value: t,
-                          child: Text(_bloodTypeLabel(t)),
+                          child: Text(bloodTypeLabel(t)),
                         ),
                       )
                       .toList(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hayatuk/core/locale/locale_provider.dart';
@@ -225,7 +226,7 @@ class _ProfileHeader extends StatelessWidget {
           radius: 48,
           backgroundColor: Theme.of(context).colorScheme.primary,
           child: Text(
-            _bloodTypeLabel(bloodType),
+            bloodTypeLabel(bloodType),
             style: const TextStyle(
               color: Colors.white,
               fontSize: 24,
@@ -253,20 +254,6 @@ class _ProfileHeader extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  String _bloodTypeLabel(String value) {
-    return switch (value) {
-      'A_POS' => 'A+',
-      'A_NEG' => 'A-',
-      'B_POS' => 'B+',
-      'B_NEG' => 'B-',
-      'AB_POS' => 'AB+',
-      'AB_NEG' => 'AB-',
-      'O_POS' => 'O+',
-      'O_NEG' => 'O-',
-      _ => value,
-    };
   }
 }
 

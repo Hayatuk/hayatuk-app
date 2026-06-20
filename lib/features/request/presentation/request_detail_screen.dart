@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hayatuk/features/request/data/models/blood_request.dart';
@@ -64,7 +65,7 @@ class _RequestDetailBody extends ConsumerWidget {
               radius: 36,
               backgroundColor: Theme.of(context).colorScheme.primary,
               child: Text(
-                _bloodTypeLabel(request.bloodType),
+                bloodTypeLabel(request.bloodType),
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -195,20 +196,6 @@ class _RequestDetailBody extends ConsumerWidget {
         ],
       ),
     );
-  }
-
-  String _bloodTypeLabel(String value) {
-    return switch (value) {
-      'A_POS' => 'A+',
-      'A_NEG' => 'A-',
-      'B_POS' => 'B+',
-      'B_NEG' => 'B-',
-      'AB_POS' => 'AB+',
-      'AB_NEG' => 'AB-',
-      'O_POS' => 'O+',
-      'O_NEG' => 'O-',
-      _ => value,
-    };
   }
 
   String _statusLabel(AppLocalizations l10n, String status) {

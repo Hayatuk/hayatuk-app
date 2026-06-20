@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -254,7 +255,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 CircleAvatar(
                   backgroundColor: Theme.of(sheetContext).colorScheme.primary,
                   child: Text(
-                    _bloodTypeLabel(r.bloodType),
+                    bloodTypeLabel(r.bloodType),
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -296,20 +297,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       ),
     );
-  }
-
-  String _bloodTypeLabel(String value) {
-    return switch (value) {
-      'A_POS' => 'A+',
-      'A_NEG' => 'A-',
-      'B_POS' => 'B+',
-      'B_NEG' => 'B-',
-      'AB_POS' => 'AB+',
-      'AB_NEG' => 'AB-',
-      'O_POS' => 'O+',
-      'O_NEG' => 'O-',
-      _ => value,
-    };
   }
 }
 

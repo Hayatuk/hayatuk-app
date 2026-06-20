@@ -1,35 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hayatuk/core/validators/validators.dart';
 import 'package:hayatuk/features/user/presentation/user_providers.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
-
-const _bloodTypes = [
-  'A_POS',
-  'A_NEG',
-  'B_POS',
-  'B_NEG',
-  'AB_POS',
-  'AB_NEG',
-  'O_POS',
-  'O_NEG',
-];
-
-String _bloodTypeLabel(String value) {
-  return switch (value) {
-    'A_POS' => 'A+',
-    'A_NEG' => 'A-',
-    'B_POS' => 'B+',
-    'B_NEG' => 'B-',
-    'AB_POS' => 'AB+',
-    'AB_NEG' => 'AB-',
-    'O_POS' => 'O+',
-    'O_NEG' => 'O-',
-    _ => value,
-  };
-}
 
 class EditProfileScreen extends ConsumerStatefulWidget {
   const EditProfileScreen({super.key});
@@ -110,11 +86,11 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                     labelText: l10n.bloodType,
                     errorText: user.fieldErrors?['blood_type'],
                   ),
-                  items: _bloodTypes
+                  items: bloodTypes
                       .map(
                         (t) => DropdownMenuItem(
                           value: t,
-                          child: Text(_bloodTypeLabel(t)),
+                          child: Text(bloodTypeLabel(t)),
                         ),
                       )
                       .toList(),

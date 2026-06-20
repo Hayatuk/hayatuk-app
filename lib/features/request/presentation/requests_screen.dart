@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hayatuk/features/request/data/models/blood_request.dart';
@@ -142,7 +143,7 @@ class _RequestCard extends ConsumerWidget {
         leading: CircleAvatar(
           backgroundColor: _statusColor(context, request.status),
           child: Text(
-            _bloodTypeLabel(request.bloodType),
+            bloodTypeLabel(request.bloodType),
             style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -222,20 +223,6 @@ class _RequestCard extends ConsumerWidget {
       'cancelled' => l10n.statusCancelled,
       'unfulfilled' => l10n.statusUnfulfilled,
       _ => status,
-    };
-  }
-
-  String _bloodTypeLabel(String value) {
-    return switch (value) {
-      'A_POS' => 'A+',
-      'A_NEG' => 'A-',
-      'B_POS' => 'B+',
-      'B_NEG' => 'B-',
-      'AB_POS' => 'AB+',
-      'AB_NEG' => 'AB-',
-      'O_POS' => 'O+',
-      'O_NEG' => 'O-',
-      _ => value,
     };
   }
 }
