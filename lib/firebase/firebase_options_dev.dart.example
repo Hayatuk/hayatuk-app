@@ -1,0 +1,30 @@
+// Template — copy to `firebase_options_dev.dart` and fill in, or regenerate
+// with `flutterfire configure` (see README). The real file is gitignored.
+// ignore_for_file: type=lint
+import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+
+class DefaultFirebaseOptionsDev {
+  static FirebaseOptions get currentPlatform {
+    if (kIsWeb) {
+      throw UnsupportedError('Not configured for web.');
+    }
+    switch (defaultTargetPlatform) {
+      case TargetPlatform.android:
+        return android;
+      default:
+        throw UnsupportedError(
+          'DefaultFirebaseOptionsDev are not supported for this platform.',
+        );
+    }
+  }
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'YOUR_DEV_ANDROID_API_KEY',
+    appId: 'YOUR_DEV_ANDROID_APP_ID',
+    messagingSenderId: 'YOUR_DEV_SENDER_ID',
+    projectId: 'your-project-dev',
+    storageBucket: 'your-project-dev.firebasestorage.app',
+  );
+}

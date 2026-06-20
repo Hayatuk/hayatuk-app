@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  analyze-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      # Firebase config is gitignored; provide compilable stand-ins so
+      # `flutter analyze` (which compiles all of lib/) succeeds. These are
+      # placeholders only — they are never used to build a real app here.
+      - name: Provide Firebase option stubs
+        run: |
+          cp lib/firebase/firebase_options_dev.dart.example lib/firebase/firebase_options_dev.dart
+          cp lib/firebase/firebase_options_prod.dart.example lib/firebase/firebase_options_prod.dart
+
+      - run: flutter --version
+      - run: flutter pub get
+      - run: dart format --output=none --set-exit-if-changed .
+      - run: flutter analyze
+      - run: flutter test
