@@ -275,7 +275,7 @@ as String,
 /// @nodoc
 mixin _$RegisterRequest {
 
- String get email; String get password; String get name;@JsonKey(name: 'blood_type') String get bloodType; String? get phone; String? get region;
+ String get email; String get password; String get name;@JsonKey(name: 'blood_type') String get bloodType; String? get phone;
 /// Create a copy of RegisterRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -288,16 +288,16 @@ $RegisterRequestCopyWith<RegisterRequest> get copyWith => _$RegisterRequestCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password)&&(identical(other.name, name) || other.name == name)&&(identical(other.bloodType, bloodType) || other.bloodType == bloodType)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.region, region) || other.region == region));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password)&&(identical(other.name, name) || other.name == name)&&(identical(other.bloodType, bloodType) || other.bloodType == bloodType)&&(identical(other.phone, phone) || other.phone == phone));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,email,password,name,bloodType,phone,region);
+int get hashCode => Object.hash(runtimeType,email,password,name,bloodType,phone);
 
 @override
 String toString() {
-  return 'RegisterRequest(email: $email, password: $password, name: $name, bloodType: $bloodType, phone: $phone, region: $region)';
+  return 'RegisterRequest(email: $email, password: $password, name: $name, bloodType: $bloodType, phone: $phone)';
 }
 
 
@@ -308,7 +308,7 @@ abstract mixin class $RegisterRequestCopyWith<$Res>  {
   factory $RegisterRequestCopyWith(RegisterRequest value, $Res Function(RegisterRequest) _then) = _$RegisterRequestCopyWithImpl;
 @useResult
 $Res call({
- String email, String password, String name,@JsonKey(name: 'blood_type') String bloodType, String? phone, String? region
+ String email, String password, String name,@JsonKey(name: 'blood_type') String bloodType, String? phone
 });
 
 
@@ -325,14 +325,13 @@ class _$RegisterRequestCopyWithImpl<$Res>
 
 /// Create a copy of RegisterRequest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? email = null,Object? password = null,Object? name = null,Object? bloodType = null,Object? phone = freezed,Object? region = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? email = null,Object? password = null,Object? name = null,Object? bloodType = null,Object? phone = freezed,}) {
   return _then(_self.copyWith(
 email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,bloodType: null == bloodType ? _self.bloodType : bloodType // ignore: cast_nullable_to_non_nullable
 as String,phone: freezed == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
-as String?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -415,10 +414,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String email,  String password,  String name, @JsonKey(name: 'blood_type')  String bloodType,  String? phone,  String? region)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String email,  String password,  String name, @JsonKey(name: 'blood_type')  String bloodType,  String? phone)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RegisterRequest() when $default != null:
-return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phone,_that.region);case _:
+return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phone);case _:
   return orElse();
 
 }
@@ -436,10 +435,10 @@ return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phon
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String email,  String password,  String name, @JsonKey(name: 'blood_type')  String bloodType,  String? phone,  String? region)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String email,  String password,  String name, @JsonKey(name: 'blood_type')  String bloodType,  String? phone)  $default,) {final _that = this;
 switch (_that) {
 case _RegisterRequest():
-return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phone,_that.region);}
+return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phone);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -453,10 +452,10 @@ return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phon
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String email,  String password,  String name, @JsonKey(name: 'blood_type')  String bloodType,  String? phone,  String? region)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String email,  String password,  String name, @JsonKey(name: 'blood_type')  String bloodType,  String? phone)?  $default,) {final _that = this;
 switch (_that) {
 case _RegisterRequest() when $default != null:
-return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phone,_that.region);case _:
+return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phone);case _:
   return null;
 
 }
@@ -468,7 +467,7 @@ return $default(_that.email,_that.password,_that.name,_that.bloodType,_that.phon
 @JsonSerializable()
 
 class _RegisterRequest implements RegisterRequest {
-  const _RegisterRequest({required this.email, required this.password, required this.name, @JsonKey(name: 'blood_type') required this.bloodType, this.phone, this.region});
+  const _RegisterRequest({required this.email, required this.password, required this.name, @JsonKey(name: 'blood_type') required this.bloodType, this.phone});
   factory _RegisterRequest.fromJson(Map<String, dynamic> json) => _$RegisterRequestFromJson(json);
 
 @override final  String email;
@@ -476,7 +475,6 @@ class _RegisterRequest implements RegisterRequest {
 @override final  String name;
 @override@JsonKey(name: 'blood_type') final  String bloodType;
 @override final  String? phone;
-@override final  String? region;
 
 /// Create a copy of RegisterRequest
 /// with the given fields replaced by the non-null parameter values.
@@ -491,16 +489,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password)&&(identical(other.name, name) || other.name == name)&&(identical(other.bloodType, bloodType) || other.bloodType == bloodType)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.region, region) || other.region == region));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password)&&(identical(other.name, name) || other.name == name)&&(identical(other.bloodType, bloodType) || other.bloodType == bloodType)&&(identical(other.phone, phone) || other.phone == phone));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,email,password,name,bloodType,phone,region);
+int get hashCode => Object.hash(runtimeType,email,password,name,bloodType,phone);
 
 @override
 String toString() {
-  return 'RegisterRequest(email: $email, password: $password, name: $name, bloodType: $bloodType, phone: $phone, region: $region)';
+  return 'RegisterRequest(email: $email, password: $password, name: $name, bloodType: $bloodType, phone: $phone)';
 }
 
 
@@ -511,7 +509,7 @@ abstract mixin class _$RegisterRequestCopyWith<$Res> implements $RegisterRequest
   factory _$RegisterRequestCopyWith(_RegisterRequest value, $Res Function(_RegisterRequest) _then) = __$RegisterRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String email, String password, String name,@JsonKey(name: 'blood_type') String bloodType, String? phone, String? region
+ String email, String password, String name,@JsonKey(name: 'blood_type') String bloodType, String? phone
 });
 
 
@@ -528,14 +526,13 @@ class __$RegisterRequestCopyWithImpl<$Res>
 
 /// Create a copy of RegisterRequest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? email = null,Object? password = null,Object? name = null,Object? bloodType = null,Object? phone = freezed,Object? region = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? email = null,Object? password = null,Object? name = null,Object? bloodType = null,Object? phone = freezed,}) {
   return _then(_RegisterRequest(
 email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,bloodType: null == bloodType ? _self.bloodType : bloodType // ignore: cast_nullable_to_non_nullable
 as String,phone: freezed == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
-as String?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }

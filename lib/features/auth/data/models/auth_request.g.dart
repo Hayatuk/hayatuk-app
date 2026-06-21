@@ -22,7 +22,6 @@ _RegisterRequest _$RegisterRequestFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       bloodType: json['blood_type'] as String,
       phone: json['phone'] as String?,
-      region: json['region'] as String?,
     );
 
 Map<String, dynamic> _$RegisterRequestToJson(_RegisterRequest instance) =>
@@ -32,5 +31,4 @@ Map<String, dynamic> _$RegisterRequestToJson(_RegisterRequest instance) =>
       'name': instance.name,
       'blood_type': instance.bloodType,
       'phone': instance.phone,
-      'region': instance.region,
     };

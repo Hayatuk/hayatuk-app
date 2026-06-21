@@ -22,7 +22,6 @@ sealed class RegisterRequest with _$RegisterRequest {
     required String name,
     @JsonKey(name: 'blood_type') required String bloodType,
     String? phone,
-    String? region,
   }) = _RegisterRequest;
 
   factory RegisterRequest.fromJson(Map<String, dynamic> json) =>
