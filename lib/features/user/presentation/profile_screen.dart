@@ -190,7 +190,9 @@ class ProfileScreen extends ConsumerWidget {
     return SimpleDialogOption(
       onPressed: () {
         ref.read(localeProvider.notifier).setLocale(value);
-        ref.read(userControllerProvider.notifier).updateLang(value!.languageCode);
+        ref
+            .read(userControllerProvider.notifier)
+            .updateLang(value!.languageCode);
         Navigator.pop(dialogContext);
       },
       child: Row(
