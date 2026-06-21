@@ -162,6 +162,12 @@ class UserController extends Notifier<UserState> {
       return false;
     }
   }
+
+  Future<void> updateLang(String lang) async {
+    try {
+      await _repo.updateLang(lang);
+    } catch (_) {}
+  }
 }
 
 final userControllerProvider = NotifierProvider<UserController, UserState>(

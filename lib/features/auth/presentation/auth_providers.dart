@@ -100,6 +100,7 @@ class AuthController extends Notifier<AuthState> {
     required String password,
     required String name,
     required String bloodType,
+    required String lang,
     String? phone,
   }) async {
     state = state.copyWith(isLoading: true, clearError: true);
@@ -110,6 +111,7 @@ class AuthController extends Notifier<AuthState> {
           password: password,
           name: name,
           bloodType: bloodType,
+          lang: lang,
           phone: phone,
         ),
       );

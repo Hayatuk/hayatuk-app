@@ -102,4 +102,12 @@ class UserRepository {
       throw handleApiError(e);
     }
   }
+
+  Future<void> updateLang(String lang) async {
+    try {
+      await _api.dio.put('/users/me/lang', data: {'lang': lang});
+    } on DioException catch (e) {
+      throw handleApiError(e);
+    }
+  }
 }

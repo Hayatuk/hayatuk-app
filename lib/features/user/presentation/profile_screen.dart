@@ -154,7 +154,6 @@ class ProfileScreen extends ConsumerWidget {
       builder: (dialogContext) => SimpleDialog(
         title: Text(l10n.language),
         children: [
-          _langOption(dialogContext, ref, l10n.systemDefault, null, current),
           _langOption(
             dialogContext,
             ref,
@@ -191,6 +190,7 @@ class ProfileScreen extends ConsumerWidget {
     return SimpleDialogOption(
       onPressed: () {
         ref.read(localeProvider.notifier).setLocale(value);
+        ref.read(userControllerProvider.notifier).updateLang(value!.languageCode);
         Navigator.pop(dialogContext);
       },
       child: Row(

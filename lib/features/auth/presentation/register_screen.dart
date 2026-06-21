@@ -42,6 +42,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
           password: _passwordController.text,
           name: _nameController.text.trim(),
           bloodType: _bloodType!,
+          lang: Localizations.localeOf(context).languageCode,
           phone: _phoneController.text.trim().isEmpty
               ? null
               : _phoneController.text.trim(),

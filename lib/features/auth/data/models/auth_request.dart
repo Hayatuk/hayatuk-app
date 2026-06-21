@@ -21,6 +21,7 @@ sealed class RegisterRequest with _$RegisterRequest {
     required String password,
     required String name,
     @JsonKey(name: 'blood_type') required String bloodType,
+    required String lang,
     String? phone,
   }) = _RegisterRequest;
 
