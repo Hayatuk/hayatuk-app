@@ -89,6 +89,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get viewDetails => 'View details';
 
   @override
+  String get view => 'View';
+
+  @override
+  String get newBloodRequest => 'New blood request';
+
+  @override
   String get donorModeOff => 'Donor mode is off';
 
   @override

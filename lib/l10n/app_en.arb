@@ -35,6 +35,8 @@
     }
   },
   "viewDetails": "View details",
+  "view": "View",
+  "newBloodRequest": "New blood request",
   "donorModeOff": "Donor mode is off",
   "donorModeOffHint": "Turn on donor mode in your profile to see nearby requests.",
   "onCooldownTitle": "On cooldown",

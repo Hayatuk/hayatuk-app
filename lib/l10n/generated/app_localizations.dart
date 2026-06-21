@@ -244,6 +244,18 @@ abstract class AppLocalizations {
   /// **'View details'**
   String get viewDetails;
 
+  /// No description provided for @view.
+  ///
+  /// In en, this message translates to:
+  /// **'View'**
+  String get view;
+
+  /// No description provided for @newBloodRequest.
+  ///
+  /// In en, this message translates to:
+  /// **'New blood request'**
+  String get newBloodRequest;
+
   /// No description provided for @donorModeOff.
   ///
   /// In en, this message translates to:

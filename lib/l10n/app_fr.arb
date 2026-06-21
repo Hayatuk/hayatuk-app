@@ -35,6 +35,8 @@
     }
   },
   "viewDetails": "Voir les détails",
+  "view": "Voir",
+  "newBloodRequest": "Nouvelle demande de sang",
   "donorModeOff": "Mode donneur désactivé",
   "donorModeOffHint": "Activez le mode donneur dans votre profil pour voir les demandes.",
   "onCooldownTitle": "Période d'attente",

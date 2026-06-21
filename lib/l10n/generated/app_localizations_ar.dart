@@ -89,6 +89,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get viewDetails => 'عرض التفاصيل';
 
   @override
+  String get view => 'عرض';
+
+  @override
+  String get newBloodRequest => 'طلب دم جديد';
+
+  @override
   String get donorModeOff => 'وضع التبرع متوقف';
 
   @override

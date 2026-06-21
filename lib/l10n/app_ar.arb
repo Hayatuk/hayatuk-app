@@ -35,6 +35,8 @@
     }
   },
   "viewDetails": "عرض التفاصيل",
+  "view": "عرض",
+  "newBloodRequest": "طلب دم جديد",
   "donorModeOff": "وضع التبرع متوقف",
   "donorModeOffHint": "قم بتفعيل وضع التبرع في ملفك الشخصي لرؤية الطلبات.",
   "onCooldownTitle": "فترة انتظار",

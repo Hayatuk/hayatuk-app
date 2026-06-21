@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hayatuk/core/permissions/permission_gate.dart';
 import 'package:hayatuk/core/router/app_router.dart';
 import 'package:hayatuk/features/user/presentation/user_providers.dart';
+import 'package:hayatuk/l10n/generated/app_localizations.dart';
 import 'package:hayatuk/main.dart';
 
 class FcmService {
@@ -75,11 +76,15 @@ class FcmService {
   }
 
   void _handleForegroundMessage(RemoteMessage message) {
+    final messenger = scaffoldMessengerKey.currentState;
+    if (messenger == null) return;
+
+    final l10n = AppLocalizations.of(messenger.context)!;
     final requestId = message.data['request_id'];
-    final title = message.notification?.title ?? 'New blood request';
+    final title = message.notification?.title ?? l10n.newBloodRequest;
     final body = message.notification?.body ?? '';
 
-    scaffoldMessengerKey.currentState?.showSnackBar(
+    messenger.showSnackBar(
       SnackBar(
         content: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -91,7 +96,7 @@ class FcmService {
         ),
         action: requestId != null
             ? SnackBarAction(
-                label: 'View',
+                label: l10n.view,
                 onPressed: () {
                   ref.read(routerProvider).push('/requests/$requestId/detail');
                 },

@@ -90,6 +90,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get viewDetails => 'Voir les détails';
 
   @override
+  String get view => 'Voir';
+
+  @override
+  String get newBloodRequest => 'Nouvelle demande de sang';
+
+  @override
   String get donorModeOff => 'Mode donneur désactivé';
 
   @override
