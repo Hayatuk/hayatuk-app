@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,15 +11,24 @@ import 'package:hayatuk/main.dart';
 class FcmService {
   final Ref ref;
 
+  bool _initialized = false;
+  StreamSubscription<String>? _onTokenRefreshSub;
+  StreamSubscription<RemoteMessage>? _onMessageSub;
+  StreamSubscription<RemoteMessage>? _onMessageOpenedAppSub;
+
   FcmService(this.ref);
 
   Future<void> initialize() async {
+    if (_initialized) return;
+    _initialized = true;
+
     final messaging = FirebaseMessaging.instance;
     final settings = await PermissionGate.serialize(
       () => messaging.requestPermission(alert: true, badge: true, sound: true),
     );
 
     if (settings.authorizationStatus == AuthorizationStatus.denied) {
+      _initialized = false;
       return;
     }
 
@@ -28,15 +39,19 @@ class FcmService {
     }
 
     // Listen for token refresh
-    messaging.onTokenRefresh.listen((newToken) {
+    _onTokenRefreshSub = messaging.onTokenRefresh.listen((newToken) {
       ref.read(userControllerProvider.notifier).updateFcmToken(newToken);
     });
 
     // Foreground messages — app is open
-    FirebaseMessaging.onMessage.listen(_handleForegroundMessage);
+    _onMessageSub = FirebaseMessaging.onMessage.listen(
+      _handleForegroundMessage,
+    );
 
     // App opened from a notification tap (was in background)
-    FirebaseMessaging.onMessageOpenedApp.listen(_handleNotificationTap);
+    _onMessageOpenedAppSub = FirebaseMessaging.onMessageOpenedApp.listen(
+      _handleNotificationTap,
+    );
 
     // App was launched by tapping a notification (was killed)
     final initialMessage = await messaging.getInitialMessage();
@@ -47,6 +62,16 @@ class FcmService {
         () => _handleNotificationTap(initialMessage),
       );
     }
+  }
+
+  Future<void> dispose() async {
+    await _onTokenRefreshSub?.cancel();
+    await _onMessageSub?.cancel();
+    await _onMessageOpenedAppSub?.cancel();
+    _onTokenRefreshSub = null;
+    _onMessageSub = null;
+    _onMessageOpenedAppSub = null;
+    _initialized = false;
   }
 
   void _handleForegroundMessage(RemoteMessage message) {

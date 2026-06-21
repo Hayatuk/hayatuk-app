@@ -127,6 +127,7 @@ class AuthController extends Notifier<AuthState> {
 
   Future<void> logout() async {
     await ref.read(userControllerProvider.notifier).clearFcmToken();
+    await ref.read(fcmServiceProvider).dispose();
     await _repository.logout();
     ref.read(userControllerProvider.notifier).clearUser();
     state = state.copyWith(isAuthenticated: false, clearError: true);
@@ -150,6 +151,8 @@ class AuthController extends Notifier<AuthState> {
           .setUser(User.fromJson(cachedUserJson));
     }
     state = state.copyWith(isInitialized: true, isAuthenticated: true);
+
+    ref.read(fcmServiceProvider).initialize();
 
     // Refresh user from server in background
     _refreshUserFromServer();
