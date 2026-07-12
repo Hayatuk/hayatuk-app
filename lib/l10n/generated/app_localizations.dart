@@ -415,13 +415,13 @@ abstract class AppLocalizations {
   /// No description provided for @contactPhoneHelper.
   ///
   /// In en, this message translates to:
-  /// **'Donors will call this number (10 digits)'**
+  /// **'Donors will call this number (9-11 digits)'**
   String get contactPhoneHelper;
 
   /// No description provided for @phoneRequiredDigits.
   ///
   /// In en, this message translates to:
-  /// **'Must be 10 digits'**
+  /// **'Must be 9-11 digits'**
   String get phoneRequiredDigits;
 
   /// No description provided for @phoneDigitsOnly.

@@ -177,10 +177,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get contactPhone => 'هاتف الاتصال';
 
   @override
-  String get contactPhoneHelper => 'سيتصل المتبرعون بهذا الرقم (10 أرقام)';
+  String get contactPhoneHelper =>
+      'سيتصل المتبرعون بهذا الرقم (9 إلى 11 رقمًا)';
 
   @override
-  String get phoneRequiredDigits => 'يجب أن يتكون من 10 أرقام';
+  String get phoneRequiredDigits => 'يجب أن يتكون من 9 إلى 11 رقمًا';
 
   @override
   String get phoneDigitsOnly => 'أرقام فقط';

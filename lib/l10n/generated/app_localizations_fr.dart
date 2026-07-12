@@ -181,10 +181,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get contactPhoneHelper =>
-      'Les donneurs appelleront ce numéro (10 chiffres)';
+      'Les donneurs appelleront ce numéro (9 à 11 chiffres)';
 
   @override
-  String get phoneRequiredDigits => 'Doit comporter 10 chiffres';
+  String get phoneRequiredDigits => 'Doit comporter 9 à 11 chiffres';
 
   @override
   String get phoneDigitsOnly => 'Chiffres uniquement';

@@ -214,7 +214,7 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                   keyboardType: TextInputType.phone,
                   inputFormatters: [
                     FilteringTextInputFormatter.digitsOnly,
-                    LengthLimitingTextInputFormatter(10),
+                    LengthLimitingTextInputFormatter(11),
                   ],
                   decoration: InputDecoration(
                     labelText: l10n.contactPhone,
@@ -223,9 +223,11 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                   validator: (v) {
                     final phone = v?.trim() ?? '';
                     if (phone.isEmpty) return l10n.required;
-                    if (phone.length != 10) return l10n.phoneRequiredDigits;
-                    if (!RegExp(r'^\d{10}$').hasMatch(phone)) {
+                    if (!RegExp(r'^\d+$').hasMatch(phone)) {
                       return l10n.phoneDigitsOnly;
+                    }
+                    if (phone.length <= 8 || phone.length >= 12) {
+                      return l10n.phoneRequiredDigits;
                     }
                     return null;
                   },
