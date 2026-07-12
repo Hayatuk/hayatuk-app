@@ -130,8 +130,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                     LengthLimitingTextInputFormatter(11),
                   ],
                   decoration: InputDecoration(labelText: l10n.phoneOptional),
-                  validator: (v) =>
-                      Validators.phone(v, l10n, required: false),
+                  validator: (v) => Validators.phone(v, l10n, required: false),
                 ),
                 const SizedBox(height: 24),
                 if (auth.error != null)

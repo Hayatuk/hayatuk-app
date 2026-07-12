@@ -107,8 +107,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                     LengthLimitingTextInputFormatter(11),
                   ],
                   decoration: InputDecoration(labelText: l10n.contactPhone),
-                  validator: (v) =>
-                      Validators.phone(v, l10n, required: false),
+                  validator: (v) => Validators.phone(v, l10n, required: false),
                 ),
                 const SizedBox(height: 24),
                 if (user.error != null)
