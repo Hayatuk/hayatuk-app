@@ -214,21 +214,13 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                   keyboardType: TextInputType.phone,
                   inputFormatters: [
                     FilteringTextInputFormatter.digitsOnly,
-                    LengthLimitingTextInputFormatter(10),
+                    LengthLimitingTextInputFormatter(11),
                   ],
                   decoration: InputDecoration(
                     labelText: l10n.contactPhone,
                     helperText: l10n.contactPhoneHelper,
                   ),
-                  validator: (v) {
-                    final phone = v?.trim() ?? '';
-                    if (phone.isEmpty) return l10n.required;
-                    if (phone.length != 10) return l10n.phoneRequiredDigits;
-                    if (!RegExp(r'^\d{10}$').hasMatch(phone)) {
-                      return l10n.phoneDigitsOnly;
-                    }
-                    return null;
-                  },
+                  validator: (v) => Validators.phone(v, l10n),
                 ),
                 const SizedBox(height: 16),
                 TextFormField(

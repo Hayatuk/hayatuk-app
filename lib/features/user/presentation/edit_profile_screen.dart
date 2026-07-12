@@ -104,17 +104,10 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                   autofillHints: const [AutofillHints.telephoneNumber],
                   inputFormatters: [
                     FilteringTextInputFormatter.digitsOnly,
-                    LengthLimitingTextInputFormatter(10),
+                    LengthLimitingTextInputFormatter(11),
                   ],
                   decoration: InputDecoration(labelText: l10n.contactPhone),
-                  validator: (v) {
-                    final phone = v?.trim() ?? '';
-                    if (phone.isEmpty) return null;
-                    if (phone.length != 10) {
-                      return l10n.phoneRequiredDigits;
-                    }
-                    return null;
-                  },
+                  validator: (v) => Validators.phone(v, l10n, required: false),
                 ),
                 const SizedBox(height: 24),
                 if (user.error != null)

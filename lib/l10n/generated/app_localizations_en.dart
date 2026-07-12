@@ -178,10 +178,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contactPhone => 'Contact phone';
 
   @override
-  String get contactPhoneHelper => 'Donors will call this number (10 digits)';
+  String get contactPhoneHelper => 'Donors will call this number (9-11 digits)';
 
   @override
-  String get phoneRequiredDigits => 'Must be 10 digits';
+  String get phoneRequiredDigits => 'Must be 9-11 digits';
 
   @override
   String get phoneDigitsOnly => 'Digits only';

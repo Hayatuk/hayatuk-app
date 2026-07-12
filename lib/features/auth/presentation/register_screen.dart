@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hayatuk/core/validators/validators.dart';
@@ -124,7 +125,12 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                 TextFormField(
                   controller: _phoneController,
                   keyboardType: TextInputType.phone,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    LengthLimitingTextInputFormatter(11),
+                  ],
                   decoration: InputDecoration(labelText: l10n.phoneOptional),
+                  validator: (v) => Validators.phone(v, l10n, required: false),
                 ),
                 const SizedBox(height: 24),
                 if (auth.error != null)
