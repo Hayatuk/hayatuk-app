@@ -879,6 +879,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Password changed'**
   String get passwordChanged;
+
+  /// No description provided for @selfCheckTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick self-check'**
+  String get selfCheckTitle;
+
+  /// No description provided for @selfCheckLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you commit, confirm you can donate today:'**
+  String get selfCheckLead;
+
+  /// No description provided for @selfCheckHealthy.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m feeling healthy today'**
+  String get selfCheckHealthy;
+
+  /// No description provided for @selfCheckAge.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m 18 or older'**
+  String get selfCheckAge;
+
+  /// No description provided for @selfCheckWeight.
+  ///
+  /// In en, this message translates to:
+  /// **'I weigh at least 50 kg'**
+  String get selfCheckWeight;
+
+  /// No description provided for @selfCheckSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'I slept well last night'**
+  String get selfCheckSleep;
+
+  /// No description provided for @selfCheckCooldownOk.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re past your donation cooldown'**
+  String get selfCheckCooldownOk;
+
+  /// No description provided for @selfCheckCooldownUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'If you\'ve donated before, tell the staff when it was'**
+  String get selfCheckCooldownUnknown;
+
+  /// No description provided for @selfCheckBlockedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re not eligible yet'**
+  String get selfCheckBlockedTitle;
+
+  /// No description provided for @selfCheckBlockedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You can donate again on {date}'**
+  String selfCheckBlockedBody(String date);
+
+  /// No description provided for @selfCheckConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m ready — accept'**
+  String get selfCheckConfirm;
+
+  /// No description provided for @prepGuideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you go'**
+  String get prepGuideTitle;
+
+  /// No description provided for @prepGuideEat.
+  ///
+  /// In en, this message translates to:
+  /// **'Eat a full meal'**
+  String get prepGuideEat;
+
+  /// No description provided for @prepGuideWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Drink plenty of water'**
+  String get prepGuideWater;
+
+  /// No description provided for @prepGuideSleeves.
+  ///
+  /// In en, this message translates to:
+  /// **'Wear short sleeves'**
+  String get prepGuideSleeves;
+
+  /// No description provided for @prepGuideId.
+  ///
+  /// In en, this message translates to:
+  /// **'Bring your ID'**
+  String get prepGuideId;
+
+  /// No description provided for @prepGuideCall.
+  ///
+  /// In en, this message translates to:
+  /// **'Call the requester to coordinate when and where to meet'**
+  String get prepGuideCall;
+
+  /// No description provided for @prepGuideDisclose.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell the staff if you\'ve been sick in the last 15 days or take any medication'**
+  String get prepGuideDisclose;
+
+  /// No description provided for @duringGuideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'At the donation center'**
+  String get duringGuideTitle;
+
+  /// No description provided for @duringGuideRelax.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay relaxed'**
+  String get duringGuideRelax;
+
+  /// No description provided for @duringGuideArm.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep your arm still'**
+  String get duringGuideArm;
+
+  /// No description provided for @duringGuideSpeakUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell the nurse if anything feels wrong'**
+  String get duringGuideSpeakUp;
+
+  /// No description provided for @duringGuideRecord.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap \"I donated\" in the Donations tab when finished'**
+  String get duringGuideRecord;
+
+  /// No description provided for @aftercareTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re a hero! ❤️'**
+  String get aftercareTitle;
+
+  /// No description provided for @aftercareLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Take care of yourself for the rest of the day:'**
+  String get aftercareLead;
+
+  /// No description provided for @aftercareWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Drink extra water'**
+  String get aftercareWater;
+
+  /// No description provided for @aftercareSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Have a snack'**
+  String get aftercareSnack;
+
+  /// No description provided for @aftercareNoLifting.
+  ///
+  /// In en, this message translates to:
+  /// **'No heavy lifting today'**
+  String get aftercareNoLifting;
+
+  /// No description provided for @aftercareNoExercise.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip intense exercise today'**
+  String get aftercareNoExercise;
+
+  /// No description provided for @aftercareEligibleAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll be eligible to donate again on {date}'**
+  String aftercareEligibleAgain(String date);
 }
 
 class _AppLocalizationsDelegate
