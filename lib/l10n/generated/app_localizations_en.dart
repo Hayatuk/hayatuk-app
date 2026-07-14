@@ -223,35 +223,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get yourOwnRequest => 'This is your own request';
 
   @override
-  String get acceptRequestConfirmTitle => 'Accept this request?';
-
-  @override
-  String get acceptRequestConfirmContent =>
-      'You\'ll receive the requester\'s phone number to coordinate the donation.';
-
-  @override
-  String get accept => 'Accept';
-
-  @override
   String get acceptFailed => 'Failed to accept';
-
-  @override
-  String get acceptSuccessTitle => 'You\'re committed';
-
-  @override
-  String get acceptSuccessLead =>
-      'Thank you for accepting. Here\'s what to do next:';
-
-  @override
-  String get acceptStep1 =>
-      'Call the requester to coordinate when and where to meet.';
-
-  @override
-  String get acceptStep2 => 'Go to the meeting point and donate.';
-
-  @override
-  String get acceptStep3 =>
-      'Tap \"I donated\" in the Donations tab when finished.';
 
   @override
   String get gotIt => 'Got it';
@@ -293,9 +265,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirm => 'Confirm';
-
-  @override
-  String get donationRecorded => 'Donation recorded. Thank you!';
 
   @override
   String get donationFailed => 'Failed to record donation';

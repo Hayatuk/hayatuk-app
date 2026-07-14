@@ -502,59 +502,11 @@ abstract class AppLocalizations {
   /// **'This is your own request'**
   String get yourOwnRequest;
 
-  /// No description provided for @acceptRequestConfirmTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Accept this request?'**
-  String get acceptRequestConfirmTitle;
-
-  /// No description provided for @acceptRequestConfirmContent.
-  ///
-  /// In en, this message translates to:
-  /// **'You\'ll receive the requester\'s phone number to coordinate the donation.'**
-  String get acceptRequestConfirmContent;
-
-  /// No description provided for @accept.
-  ///
-  /// In en, this message translates to:
-  /// **'Accept'**
-  String get accept;
-
   /// No description provided for @acceptFailed.
   ///
   /// In en, this message translates to:
   /// **'Failed to accept'**
   String get acceptFailed;
-
-  /// No description provided for @acceptSuccessTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'You\'re committed'**
-  String get acceptSuccessTitle;
-
-  /// No description provided for @acceptSuccessLead.
-  ///
-  /// In en, this message translates to:
-  /// **'Thank you for accepting. Here\'s what to do next:'**
-  String get acceptSuccessLead;
-
-  /// No description provided for @acceptStep1.
-  ///
-  /// In en, this message translates to:
-  /// **'Call the requester to coordinate when and where to meet.'**
-  String get acceptStep1;
-
-  /// No description provided for @acceptStep2.
-  ///
-  /// In en, this message translates to:
-  /// **'Go to the meeting point and donate.'**
-  String get acceptStep2;
-
-  /// No description provided for @acceptStep3.
-  ///
-  /// In en, this message translates to:
-  /// **'Tap \"I donated\" in the Donations tab when finished.'**
-  String get acceptStep3;
 
   /// No description provided for @gotIt.
   ///
@@ -627,12 +579,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Confirm'**
   String get confirm;
-
-  /// No description provided for @donationRecorded.
-  ///
-  /// In en, this message translates to:
-  /// **'Donation recorded. Thank you!'**
-  String get donationRecorded;
 
   /// No description provided for @donationFailed.
   ///

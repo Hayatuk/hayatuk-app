@@ -3,8 +3,11 @@ import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hayatuk/core/utils/date_format.dart';
 import 'package:hayatuk/features/donation/presentation/donation_providers.dart';
+import 'package:hayatuk/features/donation/presentation/guidance/aftercare_sheet.dart';
+import 'package:hayatuk/features/donation/presentation/guidance/prep_guide_sheet.dart';
 import 'package:hayatuk/features/request/data/models/accepted_request.dart';
 import 'package:hayatuk/features/request/presentation/request_providers.dart';
+import 'package:hayatuk/features/user/presentation/user_providers.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -172,6 +175,12 @@ class _AcceptanceCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Row(
                 children: [
+                  IconButton.outlined(
+                    onPressed: () => showPrepGuideSheet(context),
+                    icon: const Icon(Icons.menu_book_outlined),
+                    tooltip: l10n.prepGuideTitle,
+                  ),
+                  const SizedBox(width: 8),
                   if (request.requesterPhone != null &&
                       request.requesterPhone!.isNotEmpty)
                     Expanded(
@@ -252,10 +261,19 @@ class _AcceptanceCard extends StatelessWidget {
 
     if (!context.mounted) return;
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(success ? l10n.donationRecorded : l10n.donationFailed),
-      ),
-    );
+    if (success) {
+      final refreshed = ref.read(userControllerProvider).user?.cooldownUntil;
+      final now = DateTime.now();
+      // record() refreshed the user; if that silently failed (or the value
+      // is stale/past), fall back to donation date + 3 months.
+      final eligibleAgainOn = (refreshed != null && refreshed.isAfter(now))
+          ? refreshed
+          : DateTime(now.year, now.month + 3, now.day);
+      await showAftercareSheet(context, eligibleAgainOn: eligibleAgainOn);
+    } else {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.donationFailed)));
+    }
   }
 }

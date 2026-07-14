@@ -226,35 +226,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get yourOwnRequest => 'Ceci est votre propre demande';
 
   @override
-  String get acceptRequestConfirmTitle => 'Accepter cette demande ?';
-
-  @override
-  String get acceptRequestConfirmContent =>
-      'Vous recevrez le numéro de téléphone du demandeur pour coordonner le don.';
-
-  @override
-  String get accept => 'Accepter';
-
-  @override
   String get acceptFailed => 'Échec de l\'acceptation';
-
-  @override
-  String get acceptSuccessTitle => 'Vous êtes engagé(e)';
-
-  @override
-  String get acceptSuccessLead =>
-      'Merci d\'avoir accepté. Voici les étapes suivantes :';
-
-  @override
-  String get acceptStep1 =>
-      'Appelez le demandeur pour fixer l\'heure et le lieu du rendez-vous.';
-
-  @override
-  String get acceptStep2 => 'Rendez-vous au point de rencontre et donnez.';
-
-  @override
-  String get acceptStep3 =>
-      'Appuyez sur « J\'ai donné » dans l\'onglet Dons une fois terminé.';
 
   @override
   String get gotIt => 'Compris';
@@ -297,9 +269,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get confirm => 'Confirmer';
-
-  @override
-  String get donationRecorded => 'Don enregistré. Merci !';
 
   @override
   String get donationFailed => 'Échec de l\'enregistrement du don';
