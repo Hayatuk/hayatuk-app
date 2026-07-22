@@ -146,6 +146,8 @@ class _RequestDetailBody extends ConsumerWidget {
       ref.read(acceptancesControllerProvider.notifier).fetch();
       ref.invalidate(requestDetailProvider(request.id));
 
+      await _showNextStepsDialog(context);
+      if (!context.mounted) return;
       await showPrepGuideSheet(context);
       if (!context.mounted) return;
       context.go('/donations');
@@ -155,6 +157,37 @@ class _RequestDetailBody extends ConsumerWidget {
         context,
       ).showSnackBar(SnackBar(content: Text(error ?? l10n.acceptFailed)));
     }
+  }
+
+  Future<void> _showNextStepsDialog(BuildContext context) async {
+    final l10n = AppLocalizations.of(context)!;
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogContext) => AlertDialog(
+        icon: const Icon(Icons.bloodtype, color: Colors.red, size: 48),
+        title: Text(l10n.acceptSuccessTitle),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(l10n.acceptSuccessLead),
+            const SizedBox(height: 16),
+            _StepRow(number: '1', text: l10n.acceptStep1),
+            const SizedBox(height: 12),
+            _StepRow(number: '2', text: l10n.acceptStep2),
+            const SizedBox(height: 12),
+            _StepRow(number: '3', text: l10n.acceptStep3),
+          ],
+        ),
+        actions: [
+          FilledButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: Text(l10n.gotIt),
+          ),
+        ],
+      ),
+    );
   }
 
   String _statusLabel(AppLocalizations l10n, String status) {
@@ -189,6 +222,41 @@ class _InfoRow extends StatelessWidget {
         Text(label),
         const Spacer(),
         Text(value, style: Theme.of(context).textTheme.titleMedium),
+      ],
+    );
+  }
+}
+
+class _StepRow extends StatelessWidget {
+  final String number;
+  final String text;
+
+  const _StepRow({required this.number, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 24,
+          height: 24,
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            shape: BoxShape.circle,
+          ),
+          alignment: Alignment.center,
+          child: Text(
+            number,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(child: Text(text)),
       ],
     );
   }

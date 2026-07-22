@@ -226,7 +226,28 @@ class AppLocalizationsEn extends AppLocalizations {
   String get acceptFailed => 'Failed to accept';
 
   @override
+  String get acceptSuccessTitle => 'You\'re committed';
+
+  @override
+  String get acceptSuccessLead =>
+      'Thank you for accepting. Here\'s what to do next:';
+
+  @override
+  String get acceptStep1 =>
+      'Call the requester to coordinate when and where to meet.';
+
+  @override
+  String get acceptStep2 => 'Go to the meeting point and donate.';
+
+  @override
+  String get acceptStep3 =>
+      'Tap \"I donated\" in the Donations tab when finished.';
+
+  @override
   String get gotIt => 'Got it';
+
+  @override
+  String get next => 'Next';
 
   @override
   String get donationsTitle => 'Donations';

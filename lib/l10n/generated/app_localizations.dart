@@ -508,11 +508,47 @@ abstract class AppLocalizations {
   /// **'Failed to accept'**
   String get acceptFailed;
 
+  /// No description provided for @acceptSuccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re committed'**
+  String get acceptSuccessTitle;
+
+  /// No description provided for @acceptSuccessLead.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for accepting. Here\'s what to do next:'**
+  String get acceptSuccessLead;
+
+  /// No description provided for @acceptStep1.
+  ///
+  /// In en, this message translates to:
+  /// **'Call the requester to coordinate when and where to meet.'**
+  String get acceptStep1;
+
+  /// No description provided for @acceptStep2.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to the meeting point and donate.'**
+  String get acceptStep2;
+
+  /// No description provided for @acceptStep3.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap \"I donated\" in the Donations tab when finished.'**
+  String get acceptStep3;
+
   /// No description provided for @gotIt.
   ///
   /// In en, this message translates to:
   /// **'Got it'**
   String get gotIt;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
 
   /// No description provided for @donationsTitle.
   ///

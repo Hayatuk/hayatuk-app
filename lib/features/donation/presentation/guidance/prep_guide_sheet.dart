@@ -100,8 +100,13 @@ class _PrepGuideSheetState extends State<PrepGuideSheet> {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text(l10n.gotIt),
+                onPressed: _page < _pageCount - 1
+                    ? () => _controller.nextPage(
+                        duration: const Duration(milliseconds: 250),
+                        curve: Curves.easeOut,
+                      )
+                    : () => Navigator.pop(context),
+                child: Text(_page < _pageCount - 1 ? l10n.next : l10n.gotIt),
               ),
             ),
           ],

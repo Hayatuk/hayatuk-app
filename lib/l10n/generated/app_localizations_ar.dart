@@ -226,7 +226,26 @@ class AppLocalizationsAr extends AppLocalizations {
   String get acceptFailed => 'فشل القبول';
 
   @override
+  String get acceptSuccessTitle => 'أنت ملتزم';
+
+  @override
+  String get acceptSuccessLead => 'شكراً لقبولك. إليك الخطوات التالية:';
+
+  @override
+  String get acceptStep1 => 'اتصل بالطالب لتحديد وقت ومكان اللقاء.';
+
+  @override
+  String get acceptStep2 => 'اذهب إلى نقطة اللقاء وتبرع.';
+
+  @override
+  String get acceptStep3 =>
+      'اضغط على \"لقد تبرعت\" في علامة تبويب التبرعات عند الانتهاء.';
+
+  @override
   String get gotIt => 'حسناً';
+
+  @override
+  String get next => 'التالي';
 
   @override
   String get donationsTitle => 'التبرعات';

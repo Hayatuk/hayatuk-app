@@ -229,7 +229,28 @@ class AppLocalizationsFr extends AppLocalizations {
   String get acceptFailed => 'Échec de l\'acceptation';
 
   @override
+  String get acceptSuccessTitle => 'Vous êtes engagé(e)';
+
+  @override
+  String get acceptSuccessLead =>
+      'Merci d\'avoir accepté. Voici les étapes suivantes :';
+
+  @override
+  String get acceptStep1 =>
+      'Appelez le demandeur pour fixer l\'heure et le lieu du rendez-vous.';
+
+  @override
+  String get acceptStep2 => 'Rendez-vous au point de rencontre et donnez.';
+
+  @override
+  String get acceptStep3 =>
+      'Appuyez sur « J\'ai donné » dans l\'onglet Dons une fois terminé.';
+
+  @override
   String get gotIt => 'Compris';
+
+  @override
+  String get next => 'Suivant';
 
   @override
   String get donationsTitle => 'Dons';
