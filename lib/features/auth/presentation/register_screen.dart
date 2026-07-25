@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hayatuk/core/blood/blood_type.dart';
@@ -6,6 +7,10 @@ import 'package:hayatuk/core/validators/validators.dart';
 import 'package:hayatuk/features/auth/presentation/auth_providers.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+const _termsUrl = 'https://hayatuk.org/terms.html';
+const _privacyUrl = 'https://hayatuk.org/privacy.html';
 
 class RegisterScreen extends ConsumerStatefulWidget {
   const RegisterScreen({super.key});
@@ -22,6 +27,18 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
   final _phoneController = TextEditingController();
   String? _bloodType;
   bool _obscurePassword = true;
+  bool _acceptedTerms = false;
+  late final TapGestureRecognizer _termsRecognizer;
+  late final TapGestureRecognizer _privacyRecognizer;
+
+  @override
+  void initState() {
+    super.initState();
+    _termsRecognizer = TapGestureRecognizer()
+      ..onTap = () => _openUrl(_termsUrl);
+    _privacyRecognizer = TapGestureRecognizer()
+      ..onTap = () => _openUrl(_privacyUrl);
+  }
 
   @override
   void dispose() {
@@ -29,7 +46,16 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     _passwordController.dispose();
     _nameController.dispose();
     _phoneController.dispose();
+    _termsRecognizer.dispose();
+    _privacyRecognizer.dispose();
     super.dispose();
+  }
+
+  Future<void> _openUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    }
   }
 
   void _submit() {
@@ -131,6 +157,72 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   ],
                   decoration: InputDecoration(labelText: l10n.phoneOptional),
                   validator: (v) => Validators.phone(v, l10n, required: false),
+                ),
+                const SizedBox(height: 16),
+                FormField<bool>(
+                  initialValue: _acceptedTerms,
+                  validator: (v) => v == true ? null : l10n.termsAcceptRequired,
+                  builder: (field) {
+                    final theme = Theme.of(context);
+                    final linkStyle = TextStyle(
+                      color: theme.colorScheme.primary,
+                      decoration: TextDecoration.underline,
+                    );
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Checkbox(
+                              value: _acceptedTerms,
+                              isError: field.hasError,
+                              onChanged: (v) {
+                                setState(() => _acceptedTerms = v ?? false);
+                                field.didChange(_acceptedTerms);
+                              },
+                            ),
+                            Expanded(
+                              child: Text.rich(
+                                TextSpan(
+                                  text: l10n.termsAgreementPrefix,
+                                  children: [
+                                    TextSpan(
+                                      text: l10n.termsOfUse,
+                                      style: linkStyle,
+                                      recognizer: _termsRecognizer,
+                                    ),
+                                    TextSpan(
+                                      text: l10n.termsAgreementConjunction,
+                                    ),
+                                    TextSpan(
+                                      text: l10n.privacyPolicy,
+                                      style: linkStyle,
+                                      recognizer: _privacyRecognizer,
+                                    ),
+                                  ],
+                                ),
+                                style: theme.textTheme.bodySmall,
+                              ),
+                            ),
+                          ],
+                        ),
+                        if (field.hasError)
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(
+                              start: 12,
+                              top: 4,
+                            ),
+                            child: Text(
+                              field.errorText!,
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: theme.colorScheme.error,
+                              ),
+                            ),
+                          ),
+                      ],
+                    );
+                  },
                 ),
                 const SizedBox(height: 24),
                 if (auth.error != null)

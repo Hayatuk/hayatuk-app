@@ -40,6 +40,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get registerButton => 'Créer un compte';
 
   @override
+  String get termsAgreementPrefix => 'J’accepte les ';
+
+  @override
+  String get termsAgreementConjunction => ' et la ';
+
+  @override
+  String get termsOfUse => 'Conditions d’utilisation';
+
+  @override
+  String get privacyPolicy => 'Politique de confidentialité';
+
+  @override
+  String get termsAcceptRequired =>
+      'Vous devez accepter les conditions d’utilisation et la politique de confidentialité';
+
+  @override
   String get registerHasAccount => 'Déjà un compte ? Se connecter';
 
   @override
