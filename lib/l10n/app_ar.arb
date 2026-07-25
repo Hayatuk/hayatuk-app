@@ -136,6 +136,7 @@
   "availableToDonate": "متاح للتبرع",
   "mayReceiveRequests": "قد تتلقى طلبات للدم",
   "wontBeNotified": "لن يتم إشعارك",
+  "notificationsRequiredForDonor": "قم بتمكين الإشعارات في إعدادات جهازك لتلقي طلبات الدم.",
   "editProfileTitle": "تعديل الملف الشخصي",
   "save": "حفظ",
   "profileUpdated": "تم تحديث الملف الشخصي",

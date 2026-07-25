@@ -93,6 +93,11 @@ class UserController extends Notifier<UserState> {
     }
   }
 
+  Future<void> disableDonorStatusIfActive() async {
+    if (state.user?.isDonorActive != true) return;
+    await toggleDonorStatus(false);
+  }
+
   Future<void> deleteAccount() async {
     state = state.copyWith(isLoading: true, clearError: true);
     try {

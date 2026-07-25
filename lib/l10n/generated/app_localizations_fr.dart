@@ -353,6 +353,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get wontBeNotified => 'Vous ne serez pas notifié';
 
   @override
+  String get notificationsRequiredForDonor =>
+      'Activez les notifications dans les réglages de votre appareil pour recevoir des demandes de sang.';
+
+  @override
   String get editProfileTitle => 'Modifier le profil';
 
   @override

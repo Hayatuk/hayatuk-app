@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hayatuk/core/fcm/fcm_service.dart';
 import 'package:hayatuk/core/locale/locale_provider.dart';
 import 'package:hayatuk/core/utils/date_format.dart';
 import 'package:hayatuk/features/auth/data/models/user.dart';
@@ -315,8 +316,17 @@ class _DonorToggle extends ConsumerWidget {
             user.isDonorActive ? l10n.mayReceiveRequests : l10n.wontBeNotified,
           ),
           value: user.isDonorActive,
-          onChanged: (v) {
-            ref.read(userControllerProvider.notifier).toggleDonorStatus(v);
+          onChanged: (v) async {
+            if (v && !await ref.read(fcmServiceProvider).ensureEnabled()) {
+              if (!context.mounted) return;
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(l10n.notificationsRequiredForDonor)),
+              );
+              return;
+            }
+            await ref
+                .read(userControllerProvider.notifier)
+                .toggleDonorStatus(v);
           },
         ),
       ],

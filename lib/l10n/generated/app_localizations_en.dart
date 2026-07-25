@@ -349,6 +349,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get wontBeNotified => 'You won\'t be notified';
 
   @override
+  String get notificationsRequiredForDonor =>
+      'Enable notifications in your device settings to receive blood requests.';
+
+  @override
   String get editProfileTitle => 'Edit Profile';
 
   @override
