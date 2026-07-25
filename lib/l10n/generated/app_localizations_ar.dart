@@ -40,6 +40,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get registerButton => 'إنشاء الحساب';
 
   @override
+  String get termsAgreementPrefix => 'أوافق على ';
+
+  @override
+  String get termsAgreementConjunction => ' و';
+
+  @override
+  String get termsOfUse => 'شروط الاستخدام';
+
+  @override
+  String get privacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get termsAcceptRequired =>
+      'يجب الموافقة على شروط الاستخدام وسياسة الخصوصية';
+
+  @override
   String get registerHasAccount => 'لديك حساب؟ تسجيل الدخول';
 
   @override

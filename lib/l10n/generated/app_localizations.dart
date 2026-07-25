@@ -154,6 +154,36 @@ abstract class AppLocalizations {
   /// **'Create account'**
   String get registerButton;
 
+  /// No description provided for @termsAgreementPrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'I agree to the '**
+  String get termsAgreementPrefix;
+
+  /// No description provided for @termsAgreementConjunction.
+  ///
+  /// In en, this message translates to:
+  /// **' and the '**
+  String get termsAgreementConjunction;
+
+  /// No description provided for @termsOfUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get termsOfUse;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @termsAcceptRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'You must accept the Terms of Use and Privacy Policy'**
+  String get termsAcceptRequired;
+
   /// No description provided for @registerHasAccount.
   ///
   /// In en, this message translates to:

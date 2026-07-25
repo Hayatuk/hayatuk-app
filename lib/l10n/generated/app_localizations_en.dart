@@ -40,6 +40,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get registerButton => 'Create account';
 
   @override
+  String get termsAgreementPrefix => 'I agree to the ';
+
+  @override
+  String get termsAgreementConjunction => ' and the ';
+
+  @override
+  String get termsOfUse => 'Terms of Use';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get termsAcceptRequired =>
+      'You must accept the Terms of Use and Privacy Policy';
+
+  @override
   String get registerHasAccount => 'Already have an account? Login';
 
   @override
