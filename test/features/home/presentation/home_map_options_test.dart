@@ -15,8 +15,7 @@ import 'package:latlong2/latlong.dart';
 /// below reproduced that deterministically against unconstrained options
 /// (camera reached lat 89.999…, zoom -0.05, then NaN on the next fling).
 void main() {
-  testWidgets('camera stays finite under adversarial gestures',
-      (tester) async {
+  testWidgets('camera stays finite under adversarial gestures', (tester) async {
     final controller = MapController();
     await tester.pumpWidget(
       MaterialApp(
@@ -90,13 +89,15 @@ void main() {
       expect(e, isNull, reason: 'exception at iteration $i (action $action)');
 
       final c = controller.camera;
-      final finite = c.center.latitude.isFinite &&
+      final finite =
+          c.center.latitude.isFinite &&
           c.center.longitude.isFinite &&
           c.zoom.isFinite;
       expect(
         finite,
         isTrue,
-        reason: 'non-finite camera at iteration $i (action $action): '
+        reason:
+            'non-finite camera at iteration $i (action $action): '
             'center=${c.center} zoom=${c.zoom}',
       );
     }
