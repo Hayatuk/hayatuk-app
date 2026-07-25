@@ -14,8 +14,8 @@
   "email": "البريد الإلكتروني",
   "emailInvalid": "بريد إلكتروني غير صالح",
   "password": "كلمة المرور",
-  "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
   "passwordHelperMinChars": "8 أحرف على الأقل",
+  "passwordTooShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
   "bloodType": "فصيلة الدم",
   "phoneOptional": "الهاتف (اختياري)",
   "required": "مطلوب",
@@ -24,14 +24,20 @@
   "kmAway": "على بعد {distance} كم",
   "@kmAway": {
     "placeholders": {
-      "distance": { "type": "String" }
+      "distance": {
+        "type": "String"
+      }
     }
   },
   "donorsCount": "{accepted}/{needed} متبرعين",
   "@donorsCount": {
     "placeholders": {
-      "accepted": { "type": "int" },
-      "needed": { "type": "int" }
+      "accepted": {
+        "type": "int"
+      },
+      "needed": {
+        "type": "int"
+      }
     }
   },
   "viewDetails": "عرض التفاصيل",
@@ -43,7 +49,9 @@
   "onCooldownBody": "يمكنك التبرع مرة أخرى في {date}",
   "@onCooldownBody": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "pendingDonationTitle": "تبرع معلق",
@@ -98,13 +106,17 @@
   "acceptedOn": "تم القبول • {date}",
   "@acceptedOn": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "donatedOn": "تم التبرع • {date}",
   "@donatedOn": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "call": "اتصال",
@@ -125,7 +137,9 @@
   "availableAgainOn": "متاح مرة أخرى في {date}",
   "@availableAgainOn": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "availableToDonate": "متاح للتبرع",

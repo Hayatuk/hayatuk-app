@@ -14,8 +14,8 @@
   "email": "E-mail",
   "emailInvalid": "E-mail invalide",
   "password": "Mot de passe",
-  "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
   "passwordHelperMinChars": "Au moins 8 caractères",
+  "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
   "bloodType": "Groupe sanguin",
   "phoneOptional": "Téléphone (facultatif)",
   "required": "Requis",
@@ -24,14 +24,20 @@
   "kmAway": "À {distance} km",
   "@kmAway": {
     "placeholders": {
-      "distance": { "type": "String" }
+      "distance": {
+        "type": "String"
+      }
     }
   },
   "donorsCount": "{accepted}/{needed} donneurs",
   "@donorsCount": {
     "placeholders": {
-      "accepted": { "type": "int" },
-      "needed": { "type": "int" }
+      "accepted": {
+        "type": "int"
+      },
+      "needed": {
+        "type": "int"
+      }
     }
   },
   "viewDetails": "Voir les détails",
@@ -43,7 +49,9 @@
   "onCooldownBody": "Vous pourrez donner à nouveau le {date}",
   "@onCooldownBody": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "pendingDonationTitle": "Don en attente",
@@ -98,13 +106,17 @@
   "acceptedOn": "Accepté • {date}",
   "@acceptedOn": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "donatedOn": "Donné • {date}",
   "@donatedOn": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "call": "Appeler",
@@ -125,7 +137,9 @@
   "availableAgainOn": "Disponible à nouveau le {date}",
   "@availableAgainOn": {
     "placeholders": {
-      "date": { "type": "String" }
+      "date": {
+        "type": "String"
+      }
     }
   },
   "availableToDonate": "Disponible pour donner",
