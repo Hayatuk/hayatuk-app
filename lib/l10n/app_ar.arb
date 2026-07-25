@@ -91,9 +91,6 @@
   "locationLabel": "الموقع",
   "acceptRequest": "قبول الطلب",
   "yourOwnRequest": "هذا طلبك الخاص",
-  "acceptRequestConfirmTitle": "قبول هذا الطلب؟",
-  "acceptRequestConfirmContent": "ستحصل على رقم هاتف الطالب للتنسيق بشأن التبرع.",
-  "accept": "قبول",
   "acceptFailed": "فشل القبول",
   "acceptSuccessTitle": "أنت ملتزم",
   "acceptSuccessLead": "شكراً لقبولك. إليك الخطوات التالية:",
@@ -101,6 +98,7 @@
   "acceptStep2": "اذهب إلى نقطة اللقاء وتبرع.",
   "acceptStep3": "اضغط على \"لقد تبرعت\" في علامة تبويب التبرعات عند الانتهاء.",
   "gotIt": "حسناً",
+  "next": "Next",
   "donationsTitle": "التبرعات",
   "noAcceptancesYet": "لم تقبل أي طلبات حتى الآن.",
   "sectionPending": "تبرع معلق",
@@ -126,7 +124,6 @@
   "confirmDonationTitle": "تأكيد التبرع",
   "confirmDonationContent": "تأكيد تبرعك بالدم لهذا الطلب؟ سيبدأ هذا فترة الانتظار.",
   "confirm": "تأكيد",
-  "donationRecorded": "تم تسجيل التبرع. شكراً!",
   "donationFailed": "فشل تسجيل التبرع",
   "profileTitle": "الملف الشخصي",
   "editProfile": "تعديل الملف الشخصي",
@@ -174,5 +171,49 @@
   "currentPassword": "كلمة المرور الحالية",
   "confirmNewPassword": "تأكيد كلمة المرور الجديدة",
   "passwordsDontMatch": "كلمات المرور غير متطابقة",
-  "passwordChanged": "تم تغيير كلمة المرور"
+  "passwordChanged": "تم تغيير كلمة المرور",
+  "selfCheckTitle": "Quick self-check",
+  "selfCheckLead": "Before you commit, confirm you can donate today:",
+  "selfCheckHealthy": "I'm feeling healthy today",
+  "selfCheckAge": "I'm 18 or older",
+  "selfCheckWeight": "I weigh at least 50 kg",
+  "selfCheckSleep": "I slept well last night",
+  "selfCheckCooldownOk": "You're past your donation cooldown",
+  "selfCheckCooldownUnknown": "If you've donated before, tell the staff when it was",
+  "selfCheckBlockedTitle": "You're not eligible yet",
+  "selfCheckBlockedBody": "You can donate again on {date}",
+  "@selfCheckBlockedBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "selfCheckConfirm": "I'm ready — accept",
+  "prepGuideTitle": "Before you go",
+  "prepGuideEat": "Eat a full meal",
+  "prepGuideWater": "Drink plenty of water",
+  "prepGuideSleeves": "Wear short sleeves",
+  "prepGuideId": "Bring your ID",
+  "prepGuideCall": "Call the requester to coordinate when and where to meet",
+  "prepGuideDisclose": "Tell the staff if you've been sick in the last 15 days or take any medication",
+  "duringGuideTitle": "At the donation center",
+  "duringGuideRelax": "Stay relaxed",
+  "duringGuideArm": "Keep your arm still",
+  "duringGuideSpeakUp": "Tell the nurse if anything feels wrong",
+  "duringGuideRecord": "Tap \"I donated\" in the Donations tab when finished",
+  "aftercareTitle": "You're a hero! ❤️",
+  "aftercareLead": "Take care of yourself for the rest of the day:",
+  "aftercareWater": "Drink extra water",
+  "aftercareSnack": "Have a snack",
+  "aftercareNoLifting": "No heavy lifting today",
+  "aftercareNoExercise": "Skip intense exercise today",
+  "aftercareEligibleAgain": "You'll be eligible to donate again on {date}",
+  "@aftercareEligibleAgain": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  }
 }
