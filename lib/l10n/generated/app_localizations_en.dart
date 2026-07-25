@@ -223,16 +223,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get yourOwnRequest => 'This is your own request';
 
   @override
-  String get acceptRequestConfirmTitle => 'Accept this request?';
-
-  @override
-  String get acceptRequestConfirmContent =>
-      'You\'ll receive the requester\'s phone number to coordinate the donation.';
-
-  @override
-  String get accept => 'Accept';
-
-  @override
   String get acceptFailed => 'Failed to accept';
 
   @override
@@ -255,6 +245,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gotIt => 'Got it';
+
+  @override
+  String get next => 'Next';
 
   @override
   String get donationsTitle => 'Donations';
@@ -293,9 +286,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get confirm => 'Confirm';
-
-  @override
-  String get donationRecorded => 'Donation recorded. Thank you!';
 
   @override
   String get donationFailed => 'Failed to record donation';
@@ -423,4 +413,103 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get passwordChanged => 'Password changed';
+
+  @override
+  String get selfCheckTitle => 'Quick self-check';
+
+  @override
+  String get selfCheckLead =>
+      'Before you commit, confirm you can donate today:';
+
+  @override
+  String get selfCheckHealthy => 'I\'m feeling healthy today';
+
+  @override
+  String get selfCheckAge => 'I\'m 18 or older';
+
+  @override
+  String get selfCheckWeight => 'I weigh at least 50 kg';
+
+  @override
+  String get selfCheckSleep => 'I slept well last night';
+
+  @override
+  String get selfCheckCooldownOk => 'You\'re past your donation cooldown';
+
+  @override
+  String get selfCheckCooldownUnknown =>
+      'If you\'ve donated before, tell the staff when it was';
+
+  @override
+  String get selfCheckBlockedTitle => 'You\'re not eligible yet';
+
+  @override
+  String selfCheckBlockedBody(String date) {
+    return 'You can donate again on $date';
+  }
+
+  @override
+  String get selfCheckConfirm => 'I\'m ready — accept';
+
+  @override
+  String get prepGuideTitle => 'Before you go';
+
+  @override
+  String get prepGuideEat => 'Eat a full meal';
+
+  @override
+  String get prepGuideWater => 'Drink plenty of water';
+
+  @override
+  String get prepGuideSleeves => 'Wear short sleeves';
+
+  @override
+  String get prepGuideId => 'Bring your ID';
+
+  @override
+  String get prepGuideCall =>
+      'Call the requester to coordinate when and where to meet';
+
+  @override
+  String get prepGuideDisclose =>
+      'Tell the staff if you\'ve been sick in the last 15 days or take any medication';
+
+  @override
+  String get duringGuideTitle => 'At the donation center';
+
+  @override
+  String get duringGuideRelax => 'Stay relaxed';
+
+  @override
+  String get duringGuideArm => 'Keep your arm still';
+
+  @override
+  String get duringGuideSpeakUp => 'Tell the nurse if anything feels wrong';
+
+  @override
+  String get duringGuideRecord =>
+      'Tap \"I donated\" in the Donations tab when finished';
+
+  @override
+  String get aftercareTitle => 'You\'re a hero! ❤️';
+
+  @override
+  String get aftercareLead => 'Take care of yourself for the rest of the day:';
+
+  @override
+  String get aftercareWater => 'Drink extra water';
+
+  @override
+  String get aftercareSnack => 'Have a snack';
+
+  @override
+  String get aftercareNoLifting => 'No heavy lifting today';
+
+  @override
+  String get aftercareNoExercise => 'Skip intense exercise today';
+
+  @override
+  String aftercareEligibleAgain(String date) {
+    return 'You\'ll be eligible to donate again on $date';
+  }
 }

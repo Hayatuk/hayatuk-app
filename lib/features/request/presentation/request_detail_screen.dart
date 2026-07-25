@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hayatuk/features/donation/presentation/guidance/prep_guide_sheet.dart';
+import 'package:hayatuk/features/donation/presentation/guidance/self_check_sheet.dart';
 import 'package:hayatuk/features/request/data/models/blood_request.dart';
 import 'package:hayatuk/features/request/presentation/request_providers.dart';
 import 'package:hayatuk/features/user/presentation/user_providers.dart';
@@ -125,25 +127,13 @@ class _RequestDetailBody extends ConsumerWidget {
 
   Future<void> _accept(BuildContext context, WidgetRef ref) async {
     final l10n = AppLocalizations.of(context)!;
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.acceptRequestConfirmTitle),
-        content: Text(l10n.acceptRequestConfirmContent),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(dialogContext, false),
-            child: Text(l10n.cancel),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(dialogContext, true),
-            child: Text(l10n.accept),
-          ),
-        ],
-      ),
-    );
+    final cooldownUntil = ref.read(userControllerProvider).user?.cooldownUntil;
 
-    if (confirmed != true) return;
+    final ready = await showSelfCheckSheet(
+      context,
+      cooldownUntil: cooldownUntil,
+    );
+    if (!ready || !context.mounted) return;
 
     final success = await ref
         .read(nearbyRequestsControllerProvider.notifier)
@@ -157,6 +147,8 @@ class _RequestDetailBody extends ConsumerWidget {
       ref.invalidate(requestDetailProvider(request.id));
 
       await _showNextStepsDialog(context);
+      if (!context.mounted) return;
+      await showPrepGuideSheet(context);
       if (!context.mounted) return;
       context.go('/donations');
     } else {

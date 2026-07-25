@@ -10,6 +10,7 @@ import 'package:hayatuk/core/location/location_exception.dart';
 import 'package:hayatuk/core/location/location_service.dart';
 import 'package:hayatuk/core/utils/date_format.dart';
 import 'package:hayatuk/features/auth/data/models/user.dart';
+import 'package:hayatuk/features/home/presentation/home_map_options.dart';
 import 'package:hayatuk/features/request/data/models/nearby_request.dart';
 import 'package:hayatuk/features/request/presentation/request_providers.dart';
 import 'package:hayatuk/features/user/presentation/user_providers.dart';
@@ -140,9 +141,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       children: [
         FlutterMap(
           mapController: _mapController,
-          options: MapOptions(
+          options: homeMapOptions(
             initialCenter: _donorPosition ?? const LatLng(36.7538, 3.0588),
-            initialZoom: 12,
           ),
           children: [
             TileLayer(

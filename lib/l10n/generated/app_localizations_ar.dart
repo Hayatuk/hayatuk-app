@@ -223,16 +223,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get yourOwnRequest => 'هذا طلبك الخاص';
 
   @override
-  String get acceptRequestConfirmTitle => 'قبول هذا الطلب؟';
-
-  @override
-  String get acceptRequestConfirmContent =>
-      'ستحصل على رقم هاتف الطالب للتنسيق بشأن التبرع.';
-
-  @override
-  String get accept => 'قبول';
-
-  @override
   String get acceptFailed => 'فشل القبول';
 
   @override
@@ -253,6 +243,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get gotIt => 'حسناً';
+
+  @override
+  String get next => 'التالي';
 
   @override
   String get donationsTitle => 'التبرعات';
@@ -291,9 +284,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get confirm => 'تأكيد';
-
-  @override
-  String get donationRecorded => 'تم تسجيل التبرع. شكراً!';
 
   @override
   String get donationFailed => 'فشل تسجيل التبرع';
@@ -423,4 +413,101 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get passwordChanged => 'تم تغيير كلمة المرور';
+
+  @override
+  String get selfCheckTitle => 'فحص ذاتي سريع';
+
+  @override
+  String get selfCheckLead => 'قبل الالتزام، تأكد أنه يمكنك التبرع اليوم:';
+
+  @override
+  String get selfCheckHealthy => 'أشعر أنني بصحة جيدة اليوم';
+
+  @override
+  String get selfCheckAge => 'عمري 18 سنة أو أكثر';
+
+  @override
+  String get selfCheckWeight => 'وزني 50 كغ على الأقل';
+
+  @override
+  String get selfCheckSleep => 'نمت جيدًا الليلة الماضية';
+
+  @override
+  String get selfCheckCooldownOk => 'انقضت فترة الانتظار منذ آخر تبرع لك';
+
+  @override
+  String get selfCheckCooldownUnknown =>
+      'إذا سبق لك التبرع، أخبر الطاقم بتاريخ آخر تبرع';
+
+  @override
+  String get selfCheckBlockedTitle => 'لست مؤهلاً بعد';
+
+  @override
+  String selfCheckBlockedBody(String date) {
+    return 'يمكنك التبرع مجددًا في $date';
+  }
+
+  @override
+  String get selfCheckConfirm => 'أنا مستعد — قبول';
+
+  @override
+  String get prepGuideTitle => 'قبل الذهاب';
+
+  @override
+  String get prepGuideEat => 'تناول وجبة كاملة';
+
+  @override
+  String get prepGuideWater => 'اشرب كمية كافية من الماء';
+
+  @override
+  String get prepGuideSleeves => 'ارتدِ أكمامًا قصيرة';
+
+  @override
+  String get prepGuideId => 'أحضر بطاقة هويتك';
+
+  @override
+  String get prepGuideCall => 'اتصل بصاحب الطلب للاتفاق على مكان وموعد اللقاء';
+
+  @override
+  String get prepGuideDisclose =>
+      'أخبر الطاقم إذا كنت مريضًا خلال الـ 15 يومًا الماضية أو تتناول أي دواء';
+
+  @override
+  String get duringGuideTitle => 'في مركز التبرع';
+
+  @override
+  String get duringGuideRelax => 'ابقَ مسترخيًا';
+
+  @override
+  String get duringGuideArm => 'أبقِ ذراعك ثابتة';
+
+  @override
+  String get duringGuideSpeakUp => 'أخبر الممرض إذا شعرت بأي شيء غير طبيعي';
+
+  @override
+  String get duringGuideRecord =>
+      'اضغط على \"تبرعت\" في تبويب التبرعات عند الانتهاء';
+
+  @override
+  String get aftercareTitle => 'أنت بطل! ❤️';
+
+  @override
+  String get aftercareLead => 'اعتنِ بنفسك بقية اليوم:';
+
+  @override
+  String get aftercareWater => 'اشرب مزيدًا من الماء';
+
+  @override
+  String get aftercareSnack => 'تناول وجبة خفيفة';
+
+  @override
+  String get aftercareNoLifting => 'لا ترفع أشياء ثقيلة اليوم';
+
+  @override
+  String get aftercareNoExercise => 'تجنب التمارين الشاقة اليوم';
+
+  @override
+  String aftercareEligibleAgain(String date) {
+    return 'ستكون مؤهلاً للتبرع مجددًا في $date';
+  }
 }

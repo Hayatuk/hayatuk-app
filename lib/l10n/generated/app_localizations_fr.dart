@@ -226,16 +226,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get yourOwnRequest => 'Ceci est votre propre demande';
 
   @override
-  String get acceptRequestConfirmTitle => 'Accepter cette demande ?';
-
-  @override
-  String get acceptRequestConfirmContent =>
-      'Vous recevrez le numéro de téléphone du demandeur pour coordonner le don.';
-
-  @override
-  String get accept => 'Accepter';
-
-  @override
   String get acceptFailed => 'Échec de l\'acceptation';
 
   @override
@@ -258,6 +248,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get gotIt => 'Compris';
+
+  @override
+  String get next => 'Suivant';
 
   @override
   String get donationsTitle => 'Dons';
@@ -297,9 +290,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get confirm => 'Confirmer';
-
-  @override
-  String get donationRecorded => 'Don enregistré. Merci !';
 
   @override
   String get donationFailed => 'Échec de l\'enregistrement du don';
@@ -429,4 +419,105 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get passwordChanged => 'Mot de passe modifié';
+
+  @override
+  String get selfCheckTitle => 'Auto-évaluation rapide';
+
+  @override
+  String get selfCheckLead =>
+      'Avant de vous engager, confirmez que vous pouvez donner aujourd\'hui :';
+
+  @override
+  String get selfCheckHealthy => 'Je me sens en bonne santé aujourd\'hui';
+
+  @override
+  String get selfCheckAge => 'J\'ai 18 ans ou plus';
+
+  @override
+  String get selfCheckWeight => 'Je pèse au moins 50 kg';
+
+  @override
+  String get selfCheckSleep => 'J\'ai bien dormi cette nuit';
+
+  @override
+  String get selfCheckCooldownOk => 'Votre délai entre deux dons est écoulé';
+
+  @override
+  String get selfCheckCooldownUnknown =>
+      'Si vous avez déjà donné, indiquez au personnel la date de votre dernier don';
+
+  @override
+  String get selfCheckBlockedTitle => 'Vous n\'êtes pas encore éligible';
+
+  @override
+  String selfCheckBlockedBody(String date) {
+    return 'Vous pourrez donner à nouveau le $date';
+  }
+
+  @override
+  String get selfCheckConfirm => 'Je suis prêt — accepter';
+
+  @override
+  String get prepGuideTitle => 'Avant de partir';
+
+  @override
+  String get prepGuideEat => 'Prenez un repas complet';
+
+  @override
+  String get prepGuideWater => 'Buvez beaucoup d\'eau';
+
+  @override
+  String get prepGuideSleeves => 'Portez des manches courtes';
+
+  @override
+  String get prepGuideId => 'Apportez votre pièce d\'identité';
+
+  @override
+  String get prepGuideCall =>
+      'Appelez le demandeur pour convenir du lieu et de l\'heure';
+
+  @override
+  String get prepGuideDisclose =>
+      'Signalez au personnel si vous avez été malade ces 15 derniers jours ou si vous prenez des médicaments';
+
+  @override
+  String get duringGuideTitle => 'Au centre de don';
+
+  @override
+  String get duringGuideRelax => 'Restez détendu';
+
+  @override
+  String get duringGuideArm => 'Gardez votre bras immobile';
+
+  @override
+  String get duringGuideSpeakUp =>
+      'Prévenez l\'infirmier si quelque chose ne va pas';
+
+  @override
+  String get duringGuideRecord =>
+      'Appuyez sur « J\'ai donné » dans l\'onglet Dons une fois terminé';
+
+  @override
+  String get aftercareTitle => 'Vous êtes un héros ! ❤️';
+
+  @override
+  String get aftercareLead =>
+      'Prenez soin de vous pour le reste de la journée :';
+
+  @override
+  String get aftercareWater => 'Buvez plus d\'eau';
+
+  @override
+  String get aftercareSnack => 'Prenez une collation';
+
+  @override
+  String get aftercareNoLifting => 'Pas de charges lourdes aujourd\'hui';
+
+  @override
+  String get aftercareNoExercise => 'Évitez le sport intense aujourd\'hui';
+
+  @override
+  String aftercareEligibleAgain(String date) {
+    return 'Vous pourrez donner à nouveau le $date';
+  }
 }
