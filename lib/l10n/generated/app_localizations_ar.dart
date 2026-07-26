@@ -347,6 +347,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get wontBeNotified => 'لن يتم إشعارك';
 
   @override
+  String get notificationsRequiredForDonor =>
+      'قم بتمكين الإشعارات في إعدادات جهازك لتلقي طلبات الدم.';
+
+  @override
   String get editProfileTitle => 'تعديل الملف الشخصي';
 
   @override

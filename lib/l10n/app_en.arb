@@ -136,6 +136,7 @@
   "availableToDonate": "Available to donate",
   "mayReceiveRequests": "You may receive blood requests",
   "wontBeNotified": "You won't be notified",
+  "notificationsRequiredForDonor": "Enable notifications in your device settings to receive blood requests.",
   "editProfileTitle": "Edit Profile",
   "save": "Save",
   "profileUpdated": "Profile updated",

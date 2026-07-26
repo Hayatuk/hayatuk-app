@@ -24,19 +24,28 @@ class FcmService {
     _initialized = true;
 
     final messaging = FirebaseMessaging.instance;
-    final settings = await PermissionGate.serialize(
-      () => messaging.requestPermission(alert: true, badge: true, sound: true),
-    );
+    final result = await PermissionGate.serialize(() async {
+      final before = await messaging.getNotificationSettings();
+      final after = await messaging.requestPermission(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+      return (before: before, after: after);
+    });
 
-    if (settings.authorizationStatus == AuthorizationStatus.denied) {
+    final userController = ref.read(userControllerProvider.notifier);
+
+    if (!_isGranted(result.after.authorizationStatus)) {
       _initialized = false;
+      await userController.disableDonorStatusIfActive();
       return;
     }
 
     // Get the token and send to backend
     final token = await messaging.getToken();
     if (token != null) {
-      ref.read(userControllerProvider.notifier).updateFcmToken(token);
+      userController.updateFcmToken(token);
     }
 
     // Listen for token refresh
@@ -63,6 +72,27 @@ class FcmService {
         () => _handleNotificationTap(initialMessage),
       );
     }
+  }
+
+  Future<bool> ensureEnabled() async {
+    final messaging = FirebaseMessaging.instance;
+    final settings = await PermissionGate.serialize(() async {
+      final current = await messaging.getNotificationSettings();
+      if (current.authorizationStatus != AuthorizationStatus.notDetermined) {
+        return current;
+      }
+      return messaging.requestPermission(alert: true, badge: true, sound: true);
+    });
+
+    if (!_isGranted(settings.authorizationStatus)) return false;
+
+    await initialize();
+    return _initialized;
+  }
+
+  bool _isGranted(AuthorizationStatus status) {
+    return status == AuthorizationStatus.authorized ||
+        status == AuthorizationStatus.provisional;
   }
 
   Future<void> dispose() async {

@@ -126,7 +126,9 @@ class AuthController extends Notifier<AuthState> {
   }
 
   Future<void> logout() async {
-    await ref.read(userControllerProvider.notifier).clearFcmToken();
+    await ref
+        .read(userControllerProvider.notifier)
+        .disableDonorStatusIfActive();
     await ref.read(fcmServiceProvider).dispose();
     await _repository.logout();
     ref.read(userControllerProvider.notifier).clearUser();

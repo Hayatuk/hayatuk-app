@@ -730,6 +730,12 @@ abstract class AppLocalizations {
   /// **'You won\'t be notified'**
   String get wontBeNotified;
 
+  /// No description provided for @notificationsRequiredForDonor.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable notifications in your device settings to receive blood requests.'**
+  String get notificationsRequiredForDonor;
+
   /// No description provided for @editProfileTitle.
   ///
   /// In en, this message translates to:
