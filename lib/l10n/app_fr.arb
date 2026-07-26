@@ -150,6 +150,7 @@
   "availableToDonate": "Disponible pour donner",
   "mayReceiveRequests": "Vous pouvez recevoir des demandes de sang",
   "wontBeNotified": "Vous ne serez pas notifié",
+  "notificationsRequiredForDonor": "Enable notifications in your device settings to receive blood requests.",
   "editProfileTitle": "Modifier le profil",
   "save": "Enregistrer",
   "profileUpdated": "Profil mis à jour",
