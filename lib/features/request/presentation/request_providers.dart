@@ -210,6 +210,19 @@ class AcceptancesController extends Notifier<AcceptancesState> {
       );
     }
   }
+
+  Future<bool> cancelAcceptance(String requestId) async {
+    try {
+      await _repo.cancelAcceptance(requestId);
+      state = state.copyWith(
+        requests: state.requests.where((r) => r.id != requestId).toList(),
+      );
+      return true;
+    } catch (e) {
+      state = state.copyWith(error: e.toString());
+      return false;
+    }
+  }
 }
 
 final acceptancesControllerProvider =

@@ -88,4 +88,12 @@ class RequestRepository {
       throw handleApiError(e);
     }
   }
+
+  Future<void> cancelAcceptance(String requestId) async {
+    try {
+      await _api.dio.delete('/requests/me/acceptances/$requestId/cancel');
+    } on DioException catch (e) {
+      throw handleApiError(e);
+    }
+  }
 }
