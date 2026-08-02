@@ -652,6 +652,30 @@ abstract class AppLocalizations {
   /// **'Failed to record donation'**
   String get donationFailed;
 
+  /// No description provided for @cancelAcceptanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel your acceptance?'**
+  String get cancelAcceptanceTitle;
+
+  /// No description provided for @cancelAcceptanceContent.
+  ///
+  /// In en, this message translates to:
+  /// **'The requester will be notified and the request will look for another donor.'**
+  String get cancelAcceptanceContent;
+
+  /// No description provided for @cancelAcceptanceButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel acceptance'**
+  String get cancelAcceptanceButton;
+
+  /// No description provided for @cancelAcceptanceFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to cancel acceptance'**
+  String get cancelAcceptanceFailed;
+
   /// No description provided for @profileTitle.
   ///
   /// In en, this message translates to:

@@ -307,6 +307,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get donationFailed => 'Failed to record donation';
 
   @override
+  String get cancelAcceptanceTitle => 'Cancel your acceptance?';
+
+  @override
+  String get cancelAcceptanceContent =>
+      'The requester will be notified and the request will look for another donor.';
+
+  @override
+  String get cancelAcceptanceButton => 'Cancel acceptance';
+
+  @override
+  String get cancelAcceptanceFailed => 'Failed to cancel acceptance';
+
+  @override
   String get profileTitle => 'Profile';
 
   @override

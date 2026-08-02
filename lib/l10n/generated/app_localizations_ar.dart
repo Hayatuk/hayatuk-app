@@ -305,6 +305,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get donationFailed => 'فشل تسجيل التبرع';
 
   @override
+  String get cancelAcceptanceTitle => 'إلغاء موافقتك على التبرع؟';
+
+  @override
+  String get cancelAcceptanceContent =>
+      'سيتم إشعار صاحب الطلب وسيبحث الطلب عن متبرع آخر.';
+
+  @override
+  String get cancelAcceptanceButton => 'إلغاء الموافقة';
+
+  @override
+  String get cancelAcceptanceFailed => 'فشل إلغاء الموافقة';
+
+  @override
   String get profileTitle => 'الملف الشخصي';
 
   @override

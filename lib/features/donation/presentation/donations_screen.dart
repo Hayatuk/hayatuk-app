@@ -120,16 +120,20 @@ class _SectionHeader extends StatelessWidget {
   }
 }
 
-class _AcceptanceCard extends StatelessWidget {
+class _AcceptanceCard extends ConsumerWidget {
   final AcceptedRequest request;
 
   const _AcceptanceCard({required this.request});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final isDonated = request.donatedAt != null;
 
+    final isPending =
+        request.donatedAt == null &&
+        request.status != 'cancelled' &&
+        request.status != 'fulfilled';
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: Column(
@@ -167,10 +171,15 @@ class _AcceptanceCard extends StatelessWidget {
                 ),
               ],
             ),
+            trailing: isPending
+                ? IconButton(
+                    icon: const Icon(Icons.cancel_outlined),
+                    tooltip: l10n.cancel,
+                    onPressed: () => _confirmCancel(context, ref),
+                  )
+                : null,
           ),
-          if (request.donatedAt == null &&
-              request.status != 'cancelled' &&
-              request.status != 'fulfilled')
+          if (isPending)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               child: Row(
@@ -213,6 +222,39 @@ class _AcceptanceCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _confirmCancel(BuildContext context, WidgetRef ref) async {
+    final l10n = AppLocalizations.of(context)!;
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.cancelAcceptanceTitle),
+        content: Text(l10n.cancelAcceptanceContent),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, false),
+            child: Text(l10n.keep),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(dialogContext, true),
+            child: Text(l10n.cancelAcceptanceButton),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true) return;
+
+    final success = await ref
+        .read(acceptancesControllerProvider.notifier)
+        .cancelAcceptance(request.id);
+
+    if (!context.mounted || success) return;
+
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text(l10n.cancelAcceptanceFailed)));
   }
 
   Color _statusColor(BuildContext context, String status, bool isDonated) {

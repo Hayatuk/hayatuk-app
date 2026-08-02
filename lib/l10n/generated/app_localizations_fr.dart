@@ -311,6 +311,20 @@ class AppLocalizationsFr extends AppLocalizations {
   String get donationFailed => 'Échec de l\'enregistrement du don';
 
   @override
+  String get cancelAcceptanceTitle => 'Annuler votre engagement ?';
+
+  @override
+  String get cancelAcceptanceContent =>
+      'Le demandeur sera prévenu et la demande cherchera un autre donneur.';
+
+  @override
+  String get cancelAcceptanceButton => 'Annuler l\'engagement';
+
+  @override
+  String get cancelAcceptanceFailed =>
+      'Échec de l\'annulation de l\'engagement';
+
+  @override
   String get profileTitle => 'Profil';
 
   @override
