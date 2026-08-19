@@ -2,12 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hayatuk/core/location/geocoding_service.dart';
+import 'package:hayatuk/core/time/relative_time.dart';
 import 'package:hayatuk/features/donation/presentation/guidance/prep_guide_sheet.dart';
 import 'package:hayatuk/features/donation/presentation/guidance/self_check_sheet.dart';
 import 'package:hayatuk/features/request/data/models/blood_request.dart';
 import 'package:hayatuk/features/request/presentation/request_providers.dart';
 import 'package:hayatuk/features/user/presentation/user_providers.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
+
+import 'package:hayatuk/core/status/status.dart';
+
+String _productLabel(AppLocalizations l10n, String value) => switch (value) {
+  'whole_blood' => l10n.productWholeBlood,
+  'platelets' => l10n.productPlatelets,
+  _ => value,
+};
 
 class RequestDetailScreen extends ConsumerWidget {
   final String requestId;
@@ -48,15 +58,21 @@ class RequestDetailScreen extends ConsumerWidget {
 
 class _RequestDetailBody extends ConsumerWidget {
   final BloodRequest request;
-
   const _RequestDetailBody({required this.request});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     final currentUserId = ref.watch(userControllerProvider).user?.id;
     final isOwn = currentUserId == request.requesterId;
     final canAccept = !isOwn && request.status == 'searching';
+
+    // Hospital name is stored as the first line of notes.
+    final notes = request.notes?.trim() ?? '';
+    final noteLines = notes.isEmpty ? const <String>[] : notes.split('\n');
+    final title = noteLines.isEmpty ? l10n.bloodRequest : noteLines.first;
+    final noteDetails = noteLines.skip(1).join('\n').trim();
 
     return ListView(
       padding: const EdgeInsets.all(24),
@@ -65,7 +81,7 @@ class _RequestDetailBody extends ConsumerWidget {
           children: [
             CircleAvatar(
               radius: 36,
-              backgroundColor: Theme.of(context).colorScheme.primary,
+              backgroundColor: statusColor(context, request.status),
               child: Text(
                 bloodTypeLabel(request.bloodType),
                 style: const TextStyle(
@@ -80,12 +96,9 @@ class _RequestDetailBody extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    request.notes ?? l10n.bloodRequest,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
+                  Text(title, style: theme.textTheme.titleLarge),
                   const SizedBox(height: 4),
-                  Text(_statusLabel(l10n, request.status)),
+                  Text(statusLabel(l10n, request.status)),
                 ],
               ),
             ),
@@ -93,17 +106,48 @@ class _RequestDetailBody extends ConsumerWidget {
         ),
         const SizedBox(height: 24),
         _InfoRow(
+          icon: request.productType == 'platelets'
+              ? Icons.water_drop_outlined
+              : Icons.bloodtype_outlined,
+          label: l10n.productLabel,
+          value: _productLabel(l10n, request.productType),
+        ),
+        const SizedBox(height: 12),
+        _InfoRow(
+          icon: Icons.schedule_outlined,
+          label: l10n.postedLabel,
+          value: relativeTime(l10n, request.createdAt),
+        ),
+        const SizedBox(height: 12),
+        _InfoRow(
           icon: Icons.people_outline,
           label: l10n.donors,
           value: '${request.unitsAccepted}/${request.unitsNeeded}',
         ),
-        const SizedBox(height: 12),
-        _InfoRow(
-          icon: Icons.location_on_outlined,
-          label: l10n.locationLabel,
-          value:
-              '${request.lat.toStringAsFixed(4)}, ${request.lng.toStringAsFixed(4)}',
+        const SizedBox(height: 8),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(2),
+          child: LinearProgressIndicator(
+            value: (request.unitsAccepted / request.unitsNeeded).clamp(
+              0.0,
+              1.0,
+            ),
+            minHeight: 4,
+          ),
         ),
+        const SizedBox(height: 12),
+        _LocationRow(lat: request.lat, lng: request.lng),
+        if (noteDetails.isNotEmpty) ...[
+          const SizedBox(height: 24),
+          Text(
+            l10n.notesLabel,
+            style: theme.textTheme.titleSmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(noteDetails, style: theme.textTheme.bodyMedium),
+        ],
         const SizedBox(height: 32),
         if (canAccept)
           SizedBox(
@@ -189,16 +233,44 @@ class _RequestDetailBody extends ConsumerWidget {
       ),
     );
   }
+}
 
-  String _statusLabel(AppLocalizations l10n, String status) {
-    return switch (status) {
-      'searching' => l10n.statusSearching,
-      'in_progress' => l10n.statusInProgress,
-      'fulfilled' => l10n.statusFulfilled,
-      'cancelled' => l10n.statusCancelled,
-      'unfulfilled' => l10n.statusUnfulfilled,
-      _ => status,
-    };
+class _LocationRow extends StatefulWidget {
+  final double lat;
+  final double lng;
+
+  const _LocationRow({required this.lat, required this.lng});
+
+  @override
+  State<_LocationRow> createState() => _LocationRowState();
+}
+
+class _LocationRowState extends State<_LocationRow> {
+  final _geocodingService = GeocodingService();
+  String? _city;
+
+  @override
+  void initState() {
+    super.initState();
+    _resolveCity();
+  }
+
+  Future<void> _resolveCity() async {
+    final city = await _geocodingService.resolveCity(widget.lat, widget.lng);
+    if (!mounted) return;
+    setState(() => _city = city);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return _InfoRow(
+      icon: Icons.location_on_outlined,
+      label: l10n.locationLabel,
+      value:
+          _city ??
+          '${widget.lat.toStringAsFixed(4)}, ${widget.lng.toStringAsFixed(4)}',
+    );
   }
 }
 

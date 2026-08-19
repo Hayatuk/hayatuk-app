@@ -154,6 +154,24 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sectionPast => 'سابقة';
 
   @override
+  String get timeJustNow => 'الآن';
+
+  @override
+  String timeMinutesAgo(int minutes) {
+    return 'منذ $minutes د';
+  }
+
+  @override
+  String timeHoursAgo(int hours) {
+    return 'منذ $hours س';
+  }
+
+  @override
+  String timeDaysAgo(int days) {
+    return 'منذ $days يوم';
+  }
+
+  @override
   String get cancel => 'إلغاء';
 
   @override
@@ -231,6 +249,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get locationLabel => 'الموقع';
+
+  @override
+  String get productLabel => 'نوع التبرع';
+
+  @override
+  String get postedLabel => 'تاريخ النشر';
+
+  @override
+  String get notesLabel => 'ملاحظات';
 
   @override
   String get acceptRequest => 'قبول الطلب';
@@ -543,4 +570,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String aftercareEligibleAgain(String date) {
     return 'ستكون مؤهلاً للتبرع مجددًا في $date';
   }
+
+  @override
+  String get hospital => 'المستشفى';
+
+  @override
+  String get hospitalHint => 'مثال: مستشفى باتنة';
 }

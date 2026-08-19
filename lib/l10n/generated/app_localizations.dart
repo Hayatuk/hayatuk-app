@@ -364,6 +364,30 @@ abstract class AppLocalizations {
   /// **'Past'**
   String get sectionPast;
 
+  /// No description provided for @timeJustNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Just now'**
+  String get timeJustNow;
+
+  /// No description provided for @timeMinutesAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes}m ago'**
+  String timeMinutesAgo(int minutes);
+
+  /// No description provided for @timeHoursAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours}h ago'**
+  String timeHoursAgo(int hours);
+
+  /// No description provided for @timeDaysAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}d ago'**
+  String timeDaysAgo(int days);
+
   /// No description provided for @cancel.
   ///
   /// In en, this message translates to:
@@ -519,6 +543,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Location'**
   String get locationLabel;
+
+  /// No description provided for @productLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Product'**
+  String get productLabel;
+
+  /// No description provided for @postedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Posted'**
+  String get postedLabel;
+
+  /// No description provided for @notesLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notesLabel;
 
   /// No description provided for @acceptRequest.
   ///
@@ -1101,6 +1143,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You\'ll be eligible to donate again on {date}'**
   String aftercareEligibleAgain(String date);
+
+  /// No description provided for @hospital.
+  ///
+  /// In en, this message translates to:
+  /// **'Hospital'**
+  String get hospital;
+
+  /// No description provided for @hospitalHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. CHU Batna'**
+  String get hospitalHint;
 }
 
 class _AppLocalizationsDelegate

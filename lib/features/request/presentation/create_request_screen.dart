@@ -32,6 +32,7 @@ class CreateRequestScreen extends ConsumerStatefulWidget {
 
 class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
   final _formKey = GlobalKey<FormState>();
+  final _hospitalController = TextEditingController();
   final _notesController = TextEditingController();
   final _phoneController = TextEditingController();
   String? _bloodType;
@@ -46,7 +47,9 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
 
   @override
   void dispose() {
+    _hospitalController.dispose();
     _notesController.dispose();
+    _phoneController.dispose();
     super.dispose();
   }
 
@@ -92,7 +95,12 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
       return;
     }
 
-    final notes = _notesController.text.trim();
+    final hospital = _hospitalController.text.trim();
+    final notesText = _notesController.text.trim();
+    final notes = [
+      if (hospital.isNotEmpty) hospital,
+      if (notesText.isNotEmpty) notesText,
+    ].join('\n');
 
     final created = await ref
         .read(requestsControllerProvider.notifier)
@@ -221,6 +229,15 @@ class _CreateRequestScreenState extends ConsumerState<CreateRequestScreen> {
                     helperText: l10n.contactPhoneHelper,
                   ),
                   validator: (v) => Validators.phone(v, l10n),
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _hospitalController,
+                  decoration: InputDecoration(
+                    labelText: l10n.hospital,
+                    hintText: l10n.hospitalHint,
+                  ),
+                  validator: (v) => Validators.required(v, l10n),
                 ),
                 const SizedBox(height: 16),
                 TextFormField(

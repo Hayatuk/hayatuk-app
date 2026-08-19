@@ -155,6 +155,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sectionPast => 'Past';
 
   @override
+  String get timeJustNow => 'Just now';
+
+  @override
+  String timeMinutesAgo(int minutes) {
+    return '${minutes}m ago';
+  }
+
+  @override
+  String timeHoursAgo(int hours) {
+    return '${hours}h ago';
+  }
+
+  @override
+  String timeDaysAgo(int days) {
+    return '${days}d ago';
+  }
+
+  @override
   String get cancel => 'Cancel';
 
   @override
@@ -231,6 +249,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get locationLabel => 'Location';
+
+  @override
+  String get productLabel => 'Product';
+
+  @override
+  String get postedLabel => 'Posted';
+
+  @override
+  String get notesLabel => 'Notes';
 
   @override
   String get acceptRequest => 'Accept request';
@@ -545,4 +572,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String aftercareEligibleAgain(String date) {
     return 'You\'ll be eligible to donate again on $date';
   }
+
+  @override
+  String get hospital => 'Hospital';
+
+  @override
+  String get hospitalHint => 'e.g. CHU Batna';
 }

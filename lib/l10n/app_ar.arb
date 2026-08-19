@@ -60,6 +60,25 @@
   "noRequestsYet": "لا توجد طلبات حتى الآن.\nاضغط على الزر لطلب الدم.",
   "sectionActive": "نشطة",
   "sectionPast": "سابقة",
+  "timeJustNow": "الآن",
+  "timeMinutesAgo": "منذ {minutes} د",
+  "@timeMinutesAgo": {
+    "placeholders": {
+      "minutes": { "type": "int" }
+    }
+  },
+  "timeHoursAgo": "منذ {hours} س",
+  "@timeHoursAgo": {
+    "placeholders": {
+      "hours": { "type": "int" }
+    }
+  },
+  "timeDaysAgo": "منذ {days} يوم",
+  "@timeDaysAgo": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
   "cancel": "إلغاء",
   "cancelRequestTitle": "إلغاء الطلب؟",
   "cancelRequestContent": "سيتم إيقاف البحث عن المتبرعين.",
@@ -86,6 +105,9 @@
   "requestDetailTitle": "الطلب",
   "donors": "المتبرعون",
   "locationLabel": "الموقع",
+  "productLabel": "نوع التبرع",
+  "postedLabel": "تاريخ النشر",
+  "notesLabel": "ملاحظات",
   "acceptRequest": "قبول الطلب",
   "yourOwnRequest": "هذا طلبك الخاص",
   "acceptFailed": "فشل القبول",
@@ -197,5 +219,7 @@
   "aftercareSnack": "تناول وجبة خفيفة",
   "aftercareNoLifting": "لا ترفع أشياء ثقيلة اليوم",
   "aftercareNoExercise": "تجنب التمارين الشاقة اليوم",
-  "aftercareEligibleAgain": "ستكون مؤهلاً للتبرع مجددًا في {date}"
+  "aftercareEligibleAgain": "ستكون مؤهلاً للتبرع مجددًا في {date}",
+  "hospital": "المستشفى",
+  "hospitalHint": "مثال: مستشفى باتنة"
 }

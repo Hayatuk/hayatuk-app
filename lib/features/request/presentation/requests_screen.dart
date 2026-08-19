@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hayatuk/core/status/status.dart';
 import 'package:hayatuk/features/request/data/models/blood_request.dart';
 import 'package:hayatuk/features/request/presentation/request_providers.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
@@ -136,12 +137,15 @@ class _RequestCard extends ConsumerWidget {
     final isActive =
         request.status == 'searching' || request.status == 'in_progress';
 
+    // Hospital name is stored as the first line of notes.
+    final title = request.notes?.split('\n').first.trim();
+
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: ListTile(
         onTap: () => context.push('/requests/${request.id}/detail'),
         leading: CircleAvatar(
-          backgroundColor: _statusColor(context, request.status),
+          backgroundColor: statusColor(context, request.status),
           child: Text(
             bloodTypeLabel(request.bloodType),
             style: const TextStyle(
@@ -150,11 +154,11 @@ class _RequestCard extends ConsumerWidget {
             ),
           ),
         ),
-        title: Text(request.notes ?? l10n.bloodRequest),
+        title: Text(title == null || title.isEmpty ? l10n.bloodRequest : title),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(_statusLabel(l10n, request.status)),
+            Text(statusLabel(l10n, request.status)),
             if (request.unitsNeeded > 1)
               Padding(
                 padding: const EdgeInsets.only(top: 4),
@@ -202,27 +206,5 @@ class _RequestCard extends ConsumerWidget {
     if (confirmed == true) {
       await ref.read(requestsControllerProvider.notifier).cancel(request.id);
     }
-  }
-
-  Color _statusColor(BuildContext context, String status) {
-    return switch (status) {
-      'searching' => Colors.orange,
-      'in_progress' => Colors.blue,
-      'fulfilled' => Colors.green,
-      'cancelled' => Colors.grey,
-      'unfulfilled' => Colors.grey,
-      _ => Theme.of(context).colorScheme.primary,
-    };
-  }
-
-  String _statusLabel(AppLocalizations l10n, String status) {
-    return switch (status) {
-      'searching' => l10n.statusSearching,
-      'in_progress' => l10n.statusInProgress,
-      'fulfilled' => l10n.statusFulfilled,
-      'cancelled' => l10n.statusCancelled,
-      'unfulfilled' => l10n.statusUnfulfilled,
-      _ => status,
-    };
   }
 }
