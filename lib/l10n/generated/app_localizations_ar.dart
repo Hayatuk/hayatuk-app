@@ -457,6 +457,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get systemDefault => 'افتراضي النظام';
 
   @override
+  String get contactSupport => 'التواصل مع الدعم';
+
+  @override
   String get changePassword => 'تغيير كلمة المرور';
 
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hayatuk/core/blood/blood_type.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hayatuk/core/config/app_config.dart';
 import 'package:hayatuk/core/fcm/fcm_service.dart';
 import 'package:hayatuk/core/locale/locale_provider.dart';
 import 'package:hayatuk/core/utils/date_format.dart';
@@ -9,6 +10,7 @@ import 'package:hayatuk/features/auth/data/models/user.dart';
 import 'package:hayatuk/features/auth/presentation/auth_providers.dart';
 import 'package:hayatuk/features/user/presentation/user_providers.dart';
 import 'package:hayatuk/l10n/generated/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -54,6 +56,16 @@ class ProfileScreen extends ConsumerWidget {
               subtitle: Text(_languageLabel(ref.watch(localeProvider), l10n)),
               trailing: const Icon(Icons.chevron_right),
               onTap: () => _showLanguagePicker(context, ref),
+            ),
+            ListTile(
+              leading: const Icon(Icons.support_agent),
+              title: Text(l10n.contactSupport),
+              subtitle: const Text('WhatsApp'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => launchUrl(
+                Uri.parse(AppConfig.supportWhatsAppUrl),
+                mode: LaunchMode.externalApplication,
+              ),
             ),
             const Divider(height: 32),
             ListTile(

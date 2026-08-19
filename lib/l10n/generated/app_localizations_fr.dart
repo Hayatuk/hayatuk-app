@@ -464,6 +464,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get systemDefault => 'Par défaut du système';
 
   @override
+  String get contactSupport => 'Contacter le support';
+
+  @override
   String get changePassword => 'Modifier le mot de passe';
 
   @override

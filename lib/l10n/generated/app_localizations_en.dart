@@ -457,6 +457,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get systemDefault => 'System default';
 
   @override
+  String get contactSupport => 'Contact support';
+
+  @override
   String get changePassword => 'Change password';
 
   @override
