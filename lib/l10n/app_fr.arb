@@ -68,6 +68,31 @@
   "noRequestsYet": "Aucune demande pour l'instant.\nAppuyez sur le bouton pour demander du sang.",
   "sectionActive": "Actives",
   "sectionPast": "Passées",
+  "timeJustNow": "Just now",
+  "timeMinutesAgo": "{minutes}m ago",
+  "@timeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeHoursAgo": "{hours}h ago",
+  "@timeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "timeDaysAgo": "{days}d ago",
+  "@timeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "cancel": "Annuler",
   "cancelRequestTitle": "Annuler la demande ?",
   "cancelRequestContent": "Cela arrêtera la recherche de donneurs.",
@@ -94,6 +119,9 @@
   "requestDetailTitle": "Demande",
   "donors": "Donneurs",
   "locationLabel": "Position",
+  "productLabel": "Product",
+  "postedLabel": "Posted",
+  "notesLabel": "Notes",
   "acceptRequest": "Accepter la demande",
   "yourOwnRequest": "Ceci est votre propre demande",
   "acceptFailed": "Échec de l'acceptation",
@@ -225,5 +253,7 @@
         "type": "String"
       }
     }
-  }
+  },
+  "hospital": "Hospital",
+  "hospitalHint": "e.g. CHU Batna"
 }
