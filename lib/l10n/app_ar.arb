@@ -68,6 +68,31 @@
   "noRequestsYet": "لا توجد طلبات حتى الآن.\nاضغط على الزر لطلب الدم.",
   "sectionActive": "نشطة",
   "sectionPast": "سابقة",
+  "timeJustNow": "Just now",
+  "timeMinutesAgo": "{minutes}m ago",
+  "@timeMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeHoursAgo": "{hours}h ago",
+  "@timeHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "timeDaysAgo": "{days}d ago",
+  "@timeDaysAgo": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
   "cancel": "إلغاء",
   "cancelRequestTitle": "إلغاء الطلب؟",
   "cancelRequestContent": "سيتم إيقاف البحث عن المتبرعين.",
@@ -94,6 +119,9 @@
   "requestDetailTitle": "الطلب",
   "donors": "المتبرعون",
   "locationLabel": "الموقع",
+  "productLabel": "Product",
+  "postedLabel": "Posted",
+  "notesLabel": "Notes",
   "acceptRequest": "قبول الطلب",
   "yourOwnRequest": "هذا طلبك الخاص",
   "acceptFailed": "فشل القبول",
@@ -225,5 +253,7 @@
         "type": "String"
       }
     }
-  }
+  },
+  "hospital": "Hospital",
+  "hospitalHint": "e.g. CHU Batna"
 }
