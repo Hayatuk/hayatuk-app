@@ -14,6 +14,6 @@ class AppConfig {
   }
 
   /// GPS coordinates are rounded to this grid before sending to the server.
-  /// 0.005 degrees ≈ 500m at our latitude.
-  static const locationFuzzDegrees = 0.005;
+  /// 0.01 degrees ≈ 1km at our latitude.
+  static const locationFuzzDegrees = 0.01;
 }

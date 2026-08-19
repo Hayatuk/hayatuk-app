@@ -60,6 +60,25 @@
   "noRequestsYet": "No requests yet.\nTap the button to request blood.",
   "sectionActive": "Active",
   "sectionPast": "Past",
+  "timeJustNow": "Just now",
+  "timeMinutesAgo": "{minutes}m ago",
+  "@timeMinutesAgo": {
+    "placeholders": {
+      "minutes": { "type": "int" }
+    }
+  },
+  "timeHoursAgo": "{hours}h ago",
+  "@timeHoursAgo": {
+    "placeholders": {
+      "hours": { "type": "int" }
+    }
+  },
+  "timeDaysAgo": "{days}d ago",
+  "@timeDaysAgo": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
   "cancel": "Cancel",
   "cancelRequestTitle": "Cancel request?",
   "cancelRequestContent": "This will stop the search for donors.",
@@ -86,6 +105,9 @@
   "requestDetailTitle": "Request",
   "donors": "Donors",
   "locationLabel": "Location",
+  "productLabel": "Product",
+  "postedLabel": "Posted",
+  "notesLabel": "Notes",
   "acceptRequest": "Accept request",
   "yourOwnRequest": "This is your own request",
   "acceptFailed": "Failed to accept",
@@ -207,5 +229,7 @@
     "placeholders": {
       "date": { "type": "String" }
     }
-  }
+  },
+  "hospital": "Hospital",
+  "hospitalHint": "e.g. CHU Batna"
 }

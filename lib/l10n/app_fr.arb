@@ -60,6 +60,25 @@
   "noRequestsYet": "Aucune demande pour l'instant.\nAppuyez sur le bouton pour demander du sang.",
   "sectionActive": "Actives",
   "sectionPast": "Passées",
+  "timeJustNow": "À l'instant",
+  "timeMinutesAgo": "il y a {minutes} min",
+  "@timeMinutesAgo": {
+    "placeholders": {
+      "minutes": { "type": "int" }
+    }
+  },
+  "timeHoursAgo": "il y a {hours} h",
+  "@timeHoursAgo": {
+    "placeholders": {
+      "hours": { "type": "int" }
+    }
+  },
+  "timeDaysAgo": "il y a {days} j",
+  "@timeDaysAgo": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
   "cancel": "Annuler",
   "cancelRequestTitle": "Annuler la demande ?",
   "cancelRequestContent": "Cela arrêtera la recherche de donneurs.",
@@ -86,6 +105,9 @@
   "requestDetailTitle": "Demande",
   "donors": "Donneurs",
   "locationLabel": "Position",
+  "productLabel": "Produit",
+  "postedLabel": "Publiée",
+  "notesLabel": "Notes",
   "acceptRequest": "Accepter la demande",
   "yourOwnRequest": "Ceci est votre propre demande",
   "acceptFailed": "Échec de l'acceptation",
@@ -197,5 +219,7 @@
   "aftercareSnack": "Prenez une collation",
   "aftercareNoLifting": "Pas de charges lourdes aujourd'hui",
   "aftercareNoExercise": "Évitez le sport intense aujourd'hui",
-  "aftercareEligibleAgain": "Vous pourrez donner à nouveau le {date}"
+  "aftercareEligibleAgain": "Vous pourrez donner à nouveau le {date}",
+  "hospital": "Hôpital",
+  "hospitalHint": "ex. CHU Batna"
 }

@@ -7,8 +7,8 @@ void main() {
     const grid = AppConfig.locationFuzzDegrees;
 
     test('snaps a coordinate to the configured grid', () {
-      // Closest multiple of 0.005 to 36.7538 is 36.755.
-      expect(fuzzyCoordinate(36.7538), closeTo(36.755, 1e-9));
+      // Closest multiple of 0.01 to 36.7538 is 36.75.
+      expect(fuzzyCoordinate(36.7538), closeTo(36.75, 1e-9));
     });
 
     test('is idempotent: snapping an already-snapped value is a no-op', () {

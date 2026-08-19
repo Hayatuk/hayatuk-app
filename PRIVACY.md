@@ -18,7 +18,7 @@ behavior of the backend.
 
 The device's **exact GPS coordinate is never sent to the server**. Before any
 network call, coordinates are snapped to a coarse grid
-(`lib/core/location/fuzzy.dart`, ~500 m), so the backend only ever stores an
+(`lib/core/location/fuzzy.dart`, ~1 km), so the backend only ever stores an
 approximate area, not a precise position. The precise coordinate is used only
 locally, to center the map.
 
