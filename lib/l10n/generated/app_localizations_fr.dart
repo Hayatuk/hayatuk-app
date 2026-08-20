@@ -10,15 +10,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get locationServicesDisabled =>
-      'Activez la localisation pour voir les demandes à proximité';
+      'Activez la localisation pour voir les demandes à proximité. Votre position exacte n\'est jamais partagée — elle est arrondie à environ 1 km.';
 
   @override
   String get locationPermissionDenied =>
-      'Hayatuk a besoin de votre position pour trouver les demandes proches';
+      'Hayatuk a besoin de votre position pour trouver les demandes proches. Votre position exacte n\'est jamais partagée — elle est arrondie à environ 1 km.';
 
   @override
   String get locationPermissionDeniedForever =>
-      'La localisation est désactivée. Activez-la dans les paramètres de votre téléphone pour utiliser l\'application.';
+      'La localisation est désactivée. Activez-la dans les paramètres de votre téléphone pour utiliser l\'application. Votre position exacte n\'est jamais partagée — elle est arrondie à environ 1 km.';
 
   @override
   String get locationTimeout =>

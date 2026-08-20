@@ -1,8 +1,8 @@
 {
   "@@locale": "fr",
-  "locationServicesDisabled": "Activez la localisation pour voir les demandes à proximité",
-  "locationPermissionDenied": "Hayatuk a besoin de votre position pour trouver les demandes proches",
-  "locationPermissionDeniedForever": "La localisation est désactivée. Activez-la dans les paramètres de votre téléphone pour utiliser l'application.",
+  "locationServicesDisabled": "Activez la localisation pour voir les demandes à proximité. Votre position exacte n'est jamais partagée — elle est arrondie à environ 1 km.",
+  "locationPermissionDenied": "Hayatuk a besoin de votre position pour trouver les demandes proches. Votre position exacte n'est jamais partagée — elle est arrondie à environ 1 km.",
+  "locationPermissionDeniedForever": "La localisation est désactivée. Activez-la dans les paramètres de votre téléphone pour utiliser l'application. Votre position exacte n'est jamais partagée — elle est arrondie à environ 1 km.",
   "locationTimeout": "Impossible d'obtenir votre position. Vérifiez que la localisation est activée et réessayez.",
   "loginTitle": "Connexion",
   "loginButton": "Se connecter",
