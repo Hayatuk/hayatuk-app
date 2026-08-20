@@ -928,6 +928,12 @@ abstract class AppLocalizations {
   /// **'System default'**
   String get systemDefault;
 
+  /// No description provided for @contactSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact support'**
+  String get contactSupport;
+
   /// No description provided for @changePassword.
   ///
   /// In en, this message translates to:

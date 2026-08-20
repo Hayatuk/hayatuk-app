@@ -16,4 +16,7 @@ class AppConfig {
   /// GPS coordinates are rounded to this grid before sending to the server.
   /// 0.01 degrees ≈ 1km at our latitude.
   static const locationFuzzDegrees = 0.01;
+
+  /// WhatsApp username link for contacting support.
+  static const supportWhatsAppUrl = 'https://wa.me/qr/DYXM5VBMV2WQJ1';
 }

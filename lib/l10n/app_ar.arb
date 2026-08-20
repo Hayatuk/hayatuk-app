@@ -184,6 +184,7 @@
   "codeSent": "إذا كان البريد الإلكتروني مسجلاً، فقد تم إرسال رمز.",
   "language": "اللغة",
   "systemDefault": "افتراضي النظام",
+  "contactSupport": "التواصل مع الدعم",
   "changePassword": "تغيير كلمة المرور",
   "changePasswordTitle": "تغيير كلمة المرور",
   "currentPassword": "كلمة المرور الحالية",

@@ -184,6 +184,7 @@
   "codeSent": "If the email is registered, a code has been sent.",
   "language": "Language",
   "systemDefault": "System default",
+  "contactSupport": "Contact support",
   "changePassword": "Change password",
   "changePasswordTitle": "Change password",
   "currentPassword": "Current password",

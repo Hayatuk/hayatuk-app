@@ -184,6 +184,7 @@
   "codeSent": "Si l'e-mail est enregistré, un code a été envoyé.",
   "language": "Langue",
   "systemDefault": "Par défaut du système",
+  "contactSupport": "Contacter le support",
   "changePassword": "Modifier le mot de passe",
   "changePasswordTitle": "Modifier le mot de passe",
   "currentPassword": "Mot de passe actuel",
