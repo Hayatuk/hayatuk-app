@@ -6,6 +6,9 @@ Thanks for your interest in contributing! 🩸
 
 1. Read the [README](README.md) and complete the **Configuration** section
    (Firebase config + `ENV`/`API_URL` defines). Without it the app won't build.
+   The backend is closed source — if your contribution needs a live API,
+   [open an issue](https://github.com/Hayatuk/hayatuk-app/issues) to request
+   access to the staging environment.
 2. Install dependencies: `flutter pub get`.
 3. Verify your environment: `flutter analyze && flutter test`.
 
