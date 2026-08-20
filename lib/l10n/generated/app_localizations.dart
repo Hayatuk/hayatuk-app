@@ -103,19 +103,19 @@ abstract class AppLocalizations {
   /// No description provided for @locationServicesDisabled.
   ///
   /// In en, this message translates to:
-  /// **'Turn on location services to find nearby requests'**
+  /// **'Turn on location services to find nearby requests. Your exact location is never shared — it\'s rounded to about 1 km.'**
   String get locationServicesDisabled;
 
   /// No description provided for @locationPermissionDenied.
   ///
   /// In en, this message translates to:
-  /// **'Hayatuk needs your location to find nearby blood requests'**
+  /// **'Hayatuk needs your location to find nearby blood requests. Your exact location is never shared — it\'s rounded to about 1 km.'**
   String get locationPermissionDenied;
 
   /// No description provided for @locationPermissionDeniedForever.
   ///
   /// In en, this message translates to:
-  /// **'Location is disabled. Enable it in your phone settings to use the app.'**
+  /// **'Location is disabled. Enable it in your phone settings to use the app. Your exact location is never shared — it\'s rounded to about 1 km.'**
   String get locationPermissionDeniedForever;
 
   /// No description provided for @locationTimeout.

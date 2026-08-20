@@ -10,15 +10,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get locationServicesDisabled =>
-      'Turn on location services to find nearby requests';
+      'Turn on location services to find nearby requests. Your exact location is never shared — it\'s rounded to about 1 km.';
 
   @override
   String get locationPermissionDenied =>
-      'Hayatuk needs your location to find nearby blood requests';
+      'Hayatuk needs your location to find nearby blood requests. Your exact location is never shared — it\'s rounded to about 1 km.';
 
   @override
   String get locationPermissionDeniedForever =>
-      'Location is disabled. Enable it in your phone settings to use the app.';
+      'Location is disabled. Enable it in your phone settings to use the app. Your exact location is never shared — it\'s rounded to about 1 km.';
 
   @override
   String get locationTimeout =>

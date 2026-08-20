@@ -10,15 +10,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get locationServicesDisabled =>
-      'قم بتفعيل خدمات الموقع لرؤية الطلبات القريبة';
+      'قم بتفعيل خدمات الموقع لرؤية الطلبات القريبة. لا تتم مشاركة موقعك الدقيق أبداً — يتم تقريبه إلى حوالي 1 كم.';
 
   @override
   String get locationPermissionDenied =>
-      'يحتاج حياتك إلى موقعك للعثور على الطلبات القريبة';
+      'يحتاج حياتك إلى موقعك للعثور على الطلبات القريبة. لا تتم مشاركة موقعك الدقيق أبداً — يتم تقريبه إلى حوالي 1 كم.';
 
   @override
   String get locationPermissionDeniedForever =>
-      'الموقع معطل. قم بتفعيله من إعدادات الهاتف لاستخدام التطبيق.';
+      'الموقع معطل. قم بتفعيله من إعدادات الهاتف لاستخدام التطبيق. لا تتم مشاركة موقعك الدقيق أبداً — يتم تقريبه إلى حوالي 1 كم.';
 
   @override
   String get locationTimeout =>

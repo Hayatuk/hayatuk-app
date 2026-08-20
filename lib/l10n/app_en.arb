@@ -1,8 +1,8 @@
 {
   "@@locale": "en",
-  "locationServicesDisabled": "Turn on location services to find nearby requests",
-  "locationPermissionDenied": "Hayatuk needs your location to find nearby blood requests",
-  "locationPermissionDeniedForever": "Location is disabled. Enable it in your phone settings to use the app.",
+  "locationServicesDisabled": "Turn on location services to find nearby requests. Your exact location is never shared — it's rounded to about 1 km.",
+  "locationPermissionDenied": "Hayatuk needs your location to find nearby blood requests. Your exact location is never shared — it's rounded to about 1 km.",
+  "locationPermissionDeniedForever": "Location is disabled. Enable it in your phone settings to use the app. Your exact location is never shared — it's rounded to about 1 km.",
   "locationTimeout": "Couldn't get your location. Check that location is on and try again.",
   "loginTitle": "Login",
   "loginButton": "Login",
