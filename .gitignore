@@ -56,7 +56,7 @@ app.*.map.json
 # `flutterfire configure` per the README.
 android/app/google-services.json
 android/app/src/*/google-services.json
-ios/Runner/GoogleService-Info.plist
+ios/Runner/*/GoogleService-Info.plist
 firebase_dev.json
 firebase_prod.json
 lib/firebase/firebase_options_dev.dart
